@@ -3,7 +3,7 @@
     font-family: 'Poppins', sans-serif;
   }
   
-  body,html, :root{
+  body,html, :root {
     min-height: 100%;
     background-color: #EFF0F5;
     padding: 0;
@@ -16,13 +16,13 @@
   /* Import Font */
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&display=swap');
 
-  /* NavBar */
+  /* header */
 
-  header{
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 10%;
+    padding: 30px 10%;
   }
   
   .logo {
@@ -30,22 +30,92 @@
     height: 5rem;
   }
 
-  .nav-links {
+  .navbar-register {
     list-style: none;
   }
 
-  .nav-links li {
+  .navbar-register li {
     display: inline-block;
-    padding: 50px 20px;
-
+    background-color: #1E90FF;
+    padding: 10px 10px;
+    border-radius: 12%;
   }
 
-  .nav-links li a{
+  .navbar-register li a {
+    color: #FFFFFF;
     transition: all 0.3s ease 0s;
   }
 
-  .nav-links li a:hover{
-    color: #0088a9;
+  .navbar-register li a:hover {
+    color: black;
   }
 
+  .searchbar {
+    color: #333;
+    font-size: 17px;
+    height: 40px;
+    line-height: 44px;
+    margin-left: 50px;
+    padding-left: 10px;
+    width: 400px;
+    border-radius: 5px;
+    padding-right: 47px;
+  }
+
+  .searchbar_btn {
+    background-color: #1E90FF;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    height: 46px;
+    line-height: 40px;
+    text-align: center;
+    width: 50px;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+  }
+
+  .searchbar_btn img {
+    padding-top: 7px;
+    height: 1.3rem;
+  }
+
+  /* NavBar */
+  
+  .navbar-container {
+    margin-top: 50px;
+    height: 50px;
+    background-color: #1E90FF;
+  }
+
+  .navbar-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 20px;
+    padding: 10px 10%;
+  }
+
+  .navbar-links li a {
+    background-image: linear-gradient(
+      to right,
+      #00008B,
+      #191970 50%,
+      #FFFF 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-links li a:hover{
+    background-position: 0;
+  }
+
+  .navbar-links li a:hover::before{
+    width: 100%;
+  }
   

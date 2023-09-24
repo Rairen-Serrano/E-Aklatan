@@ -10,23 +10,32 @@
 </head>
 <body>
     <header>
-            <img class="logo" src="../images/icon.png" alt="logo">
+            <img class="logo" src="../images/icon-removebg-preview.png" alt="logo">
 
-            <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </nav> 
-                Rairen Serrano<br>
+            <div class="search-container">
+                <form action="/action_page.php">
+                  <input class="searchbar" type="text" placeholder="Search.." name="search">
+                  <button class="searchbar_btn" type="submit"><img src="../images/search_btn-removebg-preview.png"></button>
+                </form>
+            </div>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="#">LOGIN</a></li>
-                    <li><a href="#">SIGN UP</a></li>
+                <ul class="navbar-register">
+                    <li><a style="text-decoration: none" href="#">Login</a></li>
+                    <li><a style="text-decoration: none" href="#">Signup</a></li>
                 </ul>  
             </nav>
     </header>
+
+    <nav class="navbar-container">
+        <ul class="navbar-links">
+            <li><a style="text-decoration: none" href="#">HOME</a></li>
+            <li><a style="text-decoration: none" href="#">BOOKS</a></li>
+            <li><a style="text-decoration: none" href="#">EBOOKS</a></li>
+            <li><a style="text-decoration: none" href="#">CATEGORIES</a></li>
+            <li><a style="text-decoration: none" href="#">AUTHORS</a></li>
+            <li><a style="text-decoration: none" href="#">REQUEST BOOK</a></li>
+        </ul> 
+    </nav>
+
 </body>
 </html>
