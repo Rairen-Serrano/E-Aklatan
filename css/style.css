@@ -23,11 +23,6 @@
   }
 
 /*  ===================   SERRANO CSS   ===================*/
-  .footer-home{
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 2rem;
-  }
 
   /* header */
 
@@ -49,7 +44,7 @@
 
   .navbar-register li {
     display: inline-block;
-    background-color: #1E90FF;
+    background-color: #1e81b0;
     padding: 10px 10px;
     border-radius: 12%;
   }
@@ -57,6 +52,7 @@
   .navbar-register li a {
     color: #FFFFFF;
     transition: all 0.3s ease 0s;
+    font-family: Poppins-Semibold;
   }
 
   .navbar-register li a:hover {
@@ -73,10 +69,11 @@
     width: 400px;
     border-radius: 5px;
     padding-right: 47px;
+    font-family: Poppins;
   }
 
   .searchbar_btn {
-    background-color: #1E90FF;
+    background-color: #1e81b0;
     color: #fff;
     display: inline-block;
     font-size: 18px;
@@ -98,7 +95,7 @@
   .navbar-container {
     margin-top: 0px;
     height: 50px;
-    background-color: #1E90FF;
+    background-color: #1e81b0;
   }
 
   .navbar-links {
@@ -110,13 +107,14 @@
     padding: 10px 10%;
   }
 
-  .navbar-links li a {
+  .navbar-links li a{
     background-image: linear-gradient(
       to right,
       #00008B,
       #191970 50%,
       #FFFF 50%
     );
+    font-family: Poppins-Semibold;
     background-size: 200% 100%;
     background-position: -100%;
     -webkit-background-clip: text;
@@ -130,6 +128,101 @@
 
   .navbar-links li a:hover::before{
     width: 100%;
+  }
+
+  /* footer */
+  footer {
+    width: 100%;
+    background-color: #1e81b0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  .footer-links{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    list-style: none;
+  }
+
+  .footer-links li a {
+    background-image: linear-gradient(
+      to right,
+      #00008B,
+      #191970 50%,
+      #FFFF 50%
+    );
+    font-family: Poppins;
+    letter-spacing: 2px;
+    color: white;
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .footer-links li a:hover{
+    background-position: 0;
+  }
+
+  .footer-links li a:hover::before{
+    width: 100%;
+  }
+
+  .footer-links li span {
+    color: white;
+    font-weight: 300;
+    padding: 0px 20px 0px 20px;
+  }
+
+  .horizontal-line {
+    border-color: white;
+    border-style: inset;
+    border-width: 1px;
+    width: 1280px;
+    
+  }
+
+  .footer-boxes {
+    padding: 0px 70px 0px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-info li {
+    list-style: none;
+    font-size: small;
+    padding-right: 50px;
+  }
+
+  .footer-info span {
+    font-size: medium;
+    display: block;
+    font-family: Poppins-Semibold;
+    margin-bottom: 5px;
+  }
+
+  .vl {
+    border-left: 1px solid white;
+    height: 100px;
+  }
+
+  .site-info {
+    width: 20%;
+    font: Poppins;
+    font-size: small;
+    text-align: justify;
+  }
+
+  .site-info span {
+    font-size: medium;
+    display: block;
+    font-family: Poppins-Semibold;
+    margin-bottom: 5px;
+    color: black;
   }
 
 /*  ===================   WAYCO CSS   ===================*/
