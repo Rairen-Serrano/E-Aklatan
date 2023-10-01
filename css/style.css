@@ -226,6 +226,21 @@
   }
 
 /*  ===================   WAYCO CSS   ===================*/
+categories{
+  font-size: small;
+  display: block;
+  font-family: Poppins-Semibold;
+  color: black;
+  padding: 10px 40px 10px 200px;
+}
+categories2{
+  font-size: small;
+  display: block;
+  font-family: Poppins-Semibold;
+  color: black;
+  padding: 10px 40px 0px 200px;
+  
+}
 
 /*  ===================   VICQUERRA CSS   ===================*/
 
