@@ -226,6 +226,22 @@
   }
 
 /*  ===================   WAYCO CSS   ===================*/
+
+/* SERRANO PATULONG DI KO MABAGO KULAY NG LINK PANGET TIGNAN */
+a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+ 
+
 categories{
   font-size: small;
   display: block;
