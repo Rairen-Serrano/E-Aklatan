@@ -12,9 +12,22 @@
     
     font-size: 1em;
   }
-  
+
   /* Import Font */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&display=swap');
+  @font-face {
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-family: Poppins;
+
+    src: url(../fonts/Poppins-SemiBold.ttf);
+    font-family: Poppins-Semibold;
+  }
+
+/*  ===================   SERRANO CSS   ===================*/
+  .footer-home{
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 2rem;
+  }
 
   /* header */
 
@@ -67,7 +80,7 @@
     color: #fff;
     display: inline-block;
     font-size: 18px;
-    height: 46px;
+    height: 48px;
     line-height: 40px;
     text-align: center;
     width: 50px;
@@ -83,7 +96,7 @@
   /* NavBar */
   
   .navbar-container {
-    margin-top: 50px;
+    margin-top: 0px;
     height: 50px;
     background-color: #1E90FF;
   }
@@ -108,7 +121,7 @@
     background-position: -100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
 
   .navbar-links li a:hover{
@@ -118,4 +131,10 @@
   .navbar-links li a:hover::before{
     width: 100%;
   }
+
+/*  ===================   WAYCO CSS   ===================*/
+
+/*  ===================   VICQUERRA CSS   ===================*/
+
+/*  ===================   TOBIAS CSS   ===================*/
   
