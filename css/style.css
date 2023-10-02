@@ -227,35 +227,43 @@
 
 /*  ===================   WAYCO CSS   ===================*/
 
-/* SERRANO PATULONG DI KO MABAGO KULAY NG LINK PANGET TIGNAN */
+
 a:link {
-  color: blue;
+  color: black;
   background-color: transparent;
   text-decoration: none;
 }
   
-  a:hover {
+a:hover {
     color: red;
     background-color: transparent;
     text-decoration: none;
   }
   
- 
-
 categories{
-  font-size: small;
   display: block;
-  font-family: Poppins-Semibold;
   color: black;
   padding: 10px 40px 10px 200px;
 }
+
+categories a{
+  color: blue;
+  text-decoration: none;
+  font-family: Poppins-Semibold;
+  font-size: small;
+}
+
 categories2{
   font-size: small;
   display: block;
   font-family: Poppins-Semibold;
   color: black;
-  padding: 10px 40px 0px 200px;
+  padding: 10px 40px 10px 200px;
   
+}
+.categories-list{
+  display: flex;
+  padding-top: 36px;
 }
 
 /*  ===================   VICQUERRA CSS   ===================*/
