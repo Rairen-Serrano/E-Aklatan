@@ -228,12 +228,6 @@
 /*  ===================   WAYCO CSS   ===================*/
 
 
-a:link {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-  
 a:hover {
     color: red;
     background-color: transparent;
@@ -253,10 +247,15 @@ categories a{
   font-size: small;
 }
 
-categories2{
-  font-size: small;
-  display: block;
+categories2 a{
+  color: blue;
+  text-decoration: none;
   font-family: Poppins-Semibold;
+  font-size: small;
+}
+
+categories2{
+  display: block;
   color: black;
   padding: 10px 40px 10px 200px;
   
