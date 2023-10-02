@@ -226,6 +226,89 @@
   }
 
 /*  ===================   WAYCO CSS   ===================*/
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+categories{
+  display: block;
+  color: black;
+  padding: 10px 40px 10px 200px;
+}
+
+categories a{
+  color: blue;
+  text-decoration: none;
+  font-family: Poppins-Semibold;
+  font-size: small;
+}
+
+categories2 a{
+  color: blue;
+  text-decoration: none;
+  font-family: Poppins-Semibold;
+  font-size: small;
+}
+
+categories2{
+  display: block;
+  color: black;
+  padding: 10px 40px 10px 200px;
+  
+}
+.categories-list{
+  display: flex;
+  padding-top: 36px;
+}
+
+
+
+
+/* ebook page */
+.ebookhead{
+  display: block;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  padding: 100px 40px 10px 200px;
+  font-family: Poppins-Semibold;
+  font-size: large;
+  text-decoration: underline;
+}
+
+
+
+.container{
+  color: blue;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 300px 200px 300px;
+}
+.container img{
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+.container img:hover {
+  opacity:0.3;
+  
+}
+.ebooklist1{
+    width: 100px;
+    transition: width 5s;
+  }
+  .card p {
+    font-size: large;
+    font-family: Poppins-Semibold;
+    padding: 0px 0px 0px 0px;
+    width: 200px;
+    text-align: center;
+  }
+  
+
+
 
 /*  ===================   VICQUERRA CSS   ===================*/
 .column-list{
