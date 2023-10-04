@@ -311,7 +311,7 @@ categories2{
 
 
 /*  ===================   VICQUERRA CSS   ===================*/
-/* .column-list{
+ .column-list{
   column-count: 3;
   column-gap: 70px;
 }
@@ -388,7 +388,7 @@ categories2{
 }
 
 /*  ===================   TOBIAS CSS   ===================*/
-body{
+/* body{
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -513,4 +513,4 @@ input[type="submit"]:hover{
 .center1 form{
   padding: 0 40px;
   box-sizing: border-box;
-} */
+} */ 
