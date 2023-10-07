@@ -96,6 +96,7 @@
     margin-top: 0px;
     height: 50px;
     background-color: #1e81b0;
+    margin-bottom: 1rem;
   }
 
   .navbar-links {
@@ -107,7 +108,7 @@
     padding: 10px 10%;
   }
 
-  .navbar-links li a{
+  .navbar-links li a, .footer-links li a, .footer-info li a{
     background-image: linear-gradient(
       to right,
       #00008B,
@@ -122,11 +123,11 @@
     transition: all 0.1s ease-in-out;
   }
 
-  .navbar-links li a:hover{
+  .navbar-links li a:hover, .footer-links li a:hover, .footer-info li a:hover{
     background-position: 0;
   }
 
-  .navbar-links li a:hover::before{
+  .navbar-links li a:hover::before, .footer-links li a:hover::before, .footer-info li a :hover::before {
     width: 100%;
   }
 
@@ -144,31 +145,6 @@
     align-items: center;
     justify-content: left;
     list-style: none;
-  }
-
-  .footer-links li a {
-    background-image: linear-gradient(
-      to right,
-      #00008B,
-      #191970 50%,
-      #FFFF 50%
-    );
-    font-family: Poppins;
-    letter-spacing: 2px;
-    color: white;
-    background-size: 200% 100%;
-    background-position: -100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.1s ease-in-out;
-  }
-
-  .footer-links li a:hover{
-    background-position: 0;
-  }
-
-  .footer-links li a:hover::before{
-    width: 100%;
   }
 
   .footer-links li span {
@@ -194,13 +170,23 @@
 
   .footer-info li {
     list-style: none;
-    font-size: small;
     padding-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-info li a{
+    color: white;
+    font-family: Poppins;
+    font-size: small;
   }
 
   .footer-info span {
+    padding-left: 15px;
     font-size: medium;
-    display: block;
+    display: flex;
+    align-items: center;
     font-family: Poppins-Semibold;
     margin-bottom: 5px;
   }
@@ -223,6 +209,25 @@
     font-family: Poppins-Semibold;
     margin-bottom: 5px;
     color: black;
+  }
+
+  .social-icons .fab {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: #000;
+    background: #fff;
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .social-icons p {
+    font-family: Poppins;
+    font-size: small;
+    padding-right: 100px;
   }
 
 /*  ===================   WAYCO CSS   ===================*/
@@ -263,9 +268,6 @@ categories2{
   padding-top: 36px;
 }
 
-
-
-
 /* ebook page */
 .ebookhead{
   display: block;
@@ -278,8 +280,6 @@ categories2{
   text-decoration: underline;
 }
 
-
-
 .container{
   color: blue;
   text-decoration: none;
@@ -287,6 +287,7 @@ categories2{
   justify-content: space-evenly;
   padding: 50px 300px 200px 300px;
 }
+
 .container img{
   transition: all 0.5s ease-in-out;
   position: relative;
@@ -388,13 +389,14 @@ categories2{
 }
 
 /*  ===================   TOBIAS CSS   ===================*/
-body{
+/*body{
   margin: 0;
   padding: 0;
   height: 100vh;
   overflow: hidden;
-}
+} */
 .center{
+  margin-top: 100px;
   position: absolute;
   top: 75%;
   left: 75%;
@@ -495,6 +497,7 @@ input[type="submit"]:hover{
 }
 
 .center1{
+  margin-top: 130px;
   position: absolute;
   top: 78%;
   left: 75%;
