@@ -61,6 +61,30 @@
     repeater();
   }
   repeat();
+
+  //New and Updates Carousel
+  const NewsUpdatecarousel = document.querySelector(".NewsAndUpdate_carousel");
+  const arrowBtns = document.querySelectorAll(".NewsAndUpdate_wrapper .arrowButton");
+  const firstCardWidth = NewsUpdatecarousel.querySelector(".cards").offsetWidth;
+
+  //Add event Listener for the arrow buttons to scroll the carousel left and right
+  arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      NewsUpdatecarousel.scrollLeft += btn.id === "leftbtn" ? -firstCardWidth : firstCardWidth;
+    });
+  });
+
+  //Top Books Carousel
+  const TopBookscarousel = document.querySelector(".topbooks_carousel");
+  const arrowBtn = document.querySelectorAll(".topbooks_wrapper .arrowBtn");
+  const firstFrontCoverWidth = TopBookscarousel.querySelector(".frontcover").offsetWidth;
+
+  //Add event Listener for the arrow buttons to scroll the carousel left and right
+  arrowBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+      TopBookscarousel.scrollLeft += btn.id === "leftbutton" ? -firstFrontCoverWidth : firstFrontCoverWidth;
+    });
+  });
   
 /*  ===================   WAYCO SCRIPT   ===================*/
 
