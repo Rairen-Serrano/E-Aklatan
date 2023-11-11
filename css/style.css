@@ -9,7 +9,7 @@
     padding: 0;
     margin: 0;
     /* height: 100%; */
-    
+    font-family: Poppins, sans-serif;
     font-size: 1em;
   }
 
@@ -62,55 +62,6 @@
     background-color: #132540;
   }
 
-
-  /* Search Bar */
-  .search-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 80px;
-  }
-
-  .searchbar {
-    color: #333;
-    font-size: 17px;
-    height: 40px;
-    line-height: 44px;
-    padding-left: 10px;
-    width: 400px;
-    border-radius: 5px 0px 0px 5px;
-    border-color: rgba(255, 255, 255, 0.3);
-    font-family: Poppins;
-  }
-
-  .searchbar_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #6c757d;
-    font-size: 18px;
-    height: 40px;
-    line-height: 40px;
-    border-color: rgba(200, 200, 200, 0.9);
-    border-radius: 0px 5px 5px 0px;
-    width: 80px;
-    cursor: pointer;
-  }
-
-  .searchbar_btn :hover{
-    font-size: 15px;
-    color: #132540;
-  }
-
-  /* NavBar */
-  /*.navbar-container {
-    height: 100px;
-    background-color: #0359b6;
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-  } */
-
   .navbar-links {
     display: flex;
     justify-content: space-between;
@@ -148,7 +99,7 @@
   /* footer */
   footer {
     width: 100%;
-    background-color: #1e81b0;
+    background-color: #0359b6;
     position: relative;
     bottom: 0;
     left: 0;
@@ -182,6 +133,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .footer-boxes .site-info p {
+    color: white;
   }
 
   .footer-info li {
@@ -586,6 +541,261 @@
     color: #6a6d78;
     font-weight: 500;
     font-size: 15px;
+  }
+
+  /* ----- BOOKS PAGE ------ */
+  .booksPage_container {
+    /* border: solid 1px red; */
+    display: flex;
+    padding: 1px;
+  }
+
+  /* Books Header*/
+  .books_header {
+    position: relative;
+    top: -80px;
+    /* border: solid 1px violet; */
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+    border-bottom: solid 1px gray;
+  }
+
+  .books_header h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Search Bar */
+  .search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 80px;
+  }
+  
+  .searchbar {
+    color: #333;
+    font-size: 13px;
+    height: 30px;
+    line-height: 44px;
+    padding-left: 10px;
+    width: 200px;
+    border-radius: 5px 0px 0px 5px;
+    border-color: rgba(255, 255, 255, 0.3);
+    font-family: Poppins;
+  }
+  
+  .searchbar_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6c757d;
+    font-size: 13px;
+    height: 30px;
+    line-height: 40px;
+    border-color: rgba(200, 200, 200, 0.9);
+    border-radius: 0px 5px 5px 0px;
+    width: 50px;
+    cursor: pointer;
+  }
+  
+  .searchbar_btn :hover{
+    font-size: 15px;
+    color: #132540;
+  }
+
+  /* books */
+  .books_container {
+    min-height: 100vh;
+    width: 80%;
+    /* border: solid 1px black; */
+    height: 2000px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .books_wrapper {
+    /* border: solid 1px green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+
+  .book {
+    position: relative;
+    /* background: #FFFF; */
+    max-width: 325px;
+    width: 200px;
+    height: 350px;
+    margin: 25px;
+    box-shadow: 0 5px 25px rgb(1, 1, 1 / 20%);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .book_img {
+    height: 100px;
+    cursor: pointer;
+    transition: .5s ease;
+  }
+
+  .book_img img {
+    display: block;
+    width: 170px;
+    height: 260px;
+    padding: 10px 15px 0 15px;
+    opacity: 1;
+    backface-visibility: hidden;
+  }
+
+  .cover_container {
+    height: 50px;
+    width: 50px;
+    transition: .5s ease;
+    opacity: 0;
+    transform: translate(150%, 20%);
+    -ms-transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+
+  .book:hover .book_img {
+    opacity: 0.3;
+  }
+
+  .book:hover .cover_container{
+    opacity: 1;
+  }
+
+  .book_info {
+    text-align: center;
+    position: relative;
+    color: rgba(0, 0, 0, 0.9);
+    padding: 20px 20px 20px;
+    top: 80px;
+  }
+  
+  .book_info h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+
+  .book_info ul {
+    position: relative;
+    right: 8px;
+    bottom: 25px;
+    list-style: none;
+    display: flex;
+    font-size: x-large;
+  }
+
+  /* side bar */
+  .sidebar_container {
+    width: 20%;
+    /* border: solid 1px black; */
+    height: 2000px;
+    padding: 5px;
+  }
+
+  .sidebar_wrapper h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .trendBook_wrapper {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    padding: 3px;
+    margin-bottom: 8px;
+  }
+
+  .book_box img {
+    opacity: 1;
+    cursor: pointer;
+    height: 180px;
+    width: 110px;
+    transition: .3s ease;
+  }
+
+  .book_box img:hover {
+    opacity: 0.5;
+  }
+
+  .sidebar_book_info ul {
+    list-style: none;
+    display: flex;
+    font-size: large;
+  }
+
+  .sidebar_book_info h3 {
+    cursor: pointer;
+    font-size: medium;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .sidebar_book_info h3:hover {
+    text-decoration: underline;
+  }
+
+  /* Pagination */
+  .pagination {
+    position: relative;
+    bottom: -120px;
+    text-align: center;
+    margin: 30px 30px 60px;
+    user-select: none;
+  }
+
+  .pagination li {
+    display: inline-block;
+    margin: 5px;
+    box-shadow: 0 5px 25px rgb(1, 1, 1 / 10%);
+  }
+
+  .pagination li a {
+    color: #FFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+    line-height: 45px;
+  }
+
+  .previous-page, .next-page {
+    background: #0AB1CE;
+    width: 80px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .previous-page:hover {
+    transform: translateX(-5px);
+  }
+
+  .next-page:hover {
+    transform: translateX(5px);
+  }
+
+  .current-page, .dots {
+    background: #ccc;
+    width: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .active {
+    background: #0AB1CE;
+  }
+
+  .disable {
+    background: #ccc;
   }
 
   /* Media Queries */
