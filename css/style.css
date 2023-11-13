@@ -545,7 +545,7 @@
 
   /* ----- BOOKS PAGE ------ */
   .booksPage_container {
-    /* border: solid 1px red; */
+    /* border: solid 1px red; markings */
     display: flex;
     padding: 1px;
   }
@@ -554,7 +554,7 @@
   .books_header {
     position: relative;
     top: -80px;
-    /* border: solid 1px violet; */
+    /* border: solid 1px violet; markings */
     width: 88%;
     display: flex;
     justify-content: space-between;
@@ -609,7 +609,7 @@
   .books_container {
     min-height: 100vh;
     width: 80%;
-    /* border: solid 1px black; */
+    /* border: solid 1px black; markings */
     height: 2000px;
     padding: 5px;
     display: flex;
@@ -619,7 +619,7 @@
   }
 
   .books_wrapper {
-    /* border: solid 1px green; */
+    /* border: solid 1px green; markings */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -629,7 +629,7 @@
 
   .book {
     position: relative;
-    /* background: #FFFF; */
+    /* background: #FFFF; markings */
     max-width: 325px;
     width: 200px;
     height: 350px;
@@ -662,6 +662,11 @@
     transform: translate(150%, 20%);
     -ms-transform: translate(-50%, -50%);
     cursor: pointer;
+  }
+
+  .cover_container img {
+    width: 60px;
+    height: 60px;
   }
 
   .book:hover .book_img {
@@ -697,12 +702,69 @@
   /* side bar */
   .sidebar_container {
     width: 20%;
-    /* border: solid 1px black; */
+    /* border: solid 1px black; markings */
     height: 2000px;
     padding: 5px;
   }
 
-  .sidebar_wrapper h3{
+  .sidebar_categories_wrapper {
+    /* border: solid 1px green; markings */
+    margin: 5em 0 5em 0;
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 5px 10px #6a6d78;
+  }
+
+  .sidebar_categories ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .sidebar_categories ul li a {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .sidebar_categories ul li a:hover {
+    color: #2969D6;
+    font-size: 20px;
+  }
+
+  .sidebar_categories_seemore {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .sidebar_categories_seemore img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sidebar_categories_seemore img, .sidebar_categories_seemore h5 {
+    cursor: pointer;
+  }
+
+  .sidebar_categories_seemore a h5{
+    transition: all 0.2s ease-in-out;
+    color: black;
+  }
+
+  .sidebar_categories_seemore a h5:hover{
+    color: #2969D6;
+    font-size: 15px;
+  }
+
+  .sidebar_wrapper {
+    /* border: solid 1px blue; markings */
+  }
+
+  .sidebar_wrapper h3, .sidebar_categories_wrapper h3{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -747,6 +809,7 @@
 
   /* Pagination */
   .pagination {
+    /* border: solid 1px brown; markings */
     position: relative;
     bottom: -120px;
     text-align: center;
