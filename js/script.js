@@ -314,6 +314,20 @@ switch(page){
         return showPage(currentPage - 1);
       });
     });
+
+  case 'NewspaperPage':
+    //Annual Report Carousel
+    const annualReportcarousel = document.querySelector(".annualReports_carousel");
+    const annualReport_arrowBtn = document.querySelectorAll(".annualReports_wrapper .arrowBtn");
+    const annualReportFrontCoverWidth = annualReportcarousel.querySelector(".annualReports_frontcover").offsetWidth;
+
+    //Add event Listener for the arrow buttons to scroll the carousel left and right
+    annualReport_arrowBtn.forEach(btn => {
+       btn.addEventListener("click", () => {
+        annualReportcarousel.scrollLeft += btn.id === "leftbutton" ? -annualReportFrontCoverWidth : annualReportFrontCoverWidth;
+       });
+     });
+
 }
   
 
