@@ -31,23 +31,19 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
-    /* border: solid 1px black; markings */
   }
   
   .logo {
     cursor: pointer;
     height: 5rem;
-    /* border: solid 1px blue; markings */
   }
 
   .library_location_container{
-    /* border: solid 1px yellowgreen; markings */
     padding: 3px;
     display: flex;
   }
 
   .library_location_container .pin_wrapper{
-    /* border: solid 1px seagreen; markings */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,13 +57,11 @@
   }
 
   .library_location_container .address_wrapper{
-    /* border: solid 1px teal; markings */
     letter-spacing: -.5px;
     line-height: 17px;
   }
 
   .library_location_container .address_wrapper p{
-    /* border: solid 1px blueviolet; markings */
     font-family: Poppins-Semibold;
     font-size: medium;
     text-align: center;
@@ -79,7 +73,6 @@
   }
 
   .navbar-register{
-    /* border: solid 1px red; markings */
     padding: 0;
   }
 
@@ -965,7 +958,7 @@
 
   .annualReports_carousel .annualReports_frontcover{
     width: 220px;
-    height: 470px;
+    height: 400px;
     list-style: none;
     border-radius: 8px;
     display: flex;
@@ -983,6 +976,58 @@
   .annualReports_carousel .annualReports_frontcover h2{
     font-family: Poppins;
     font-size: 21px;
+  }
+
+  .background_container{
+    background-image: url('../images/makatiCityHall_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 1000px;
+    padding: 4%;
+  }
+
+  .background_container .container_wrapper{
+    border: solid 0 transparent;
+    height: 90%;
+    width: 1130px;
+    background-color: rgba(245, 245, 245, 0.8);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    border-radius: 30px;
+    padding: 4%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container_wrapper h3{
+    font-size: x-large;
+  }
+
+  .makaticity_wrapper{
+    border: solid 0 transparent;
+    background-color: rgba(245, 245, 245, 0.8);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    height: 280px;
+    border-radius: 15px;
+    padding: 20px 100px 20px 100px;
+    text-align: justify;
+  }
+
+  .makatiVision_container{
+    padding-bottom: 50px;
+  }
+
+  .makatiMission_container p, .makatiVision_container p{
+    margin-top: 0;
+  }
+
+  .makatiMission_container h3, .makatiVision_container h3{
+    margin: 0;
+    text-align: center;
   }
 
   /* Media Queries */
