@@ -6,6 +6,8 @@
 $(function(){
   $("#navbar-placeholder").load("navbar.html");
   $("#footer-placeholder").load("footer.html");
+  $("#newspage-navbar-placeholder").load("newspage_navbar.html");
+  $("#newspage-footer-placeholder").load("newspage_footer.html");
 });
 
 //Switch Statement for different HTML pages
@@ -327,7 +329,6 @@ switch(page){
         annualReportcarousel.scrollLeft += btn.id === "leftbutton" ? -annualReportFrontCoverWidth : annualReportFrontCoverWidth;
        });
      });
-
 }
   
 
