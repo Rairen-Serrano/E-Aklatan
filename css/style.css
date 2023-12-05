@@ -13,6 +13,17 @@
     font-size: 1em;
   }
 
+  /*
+  Color Pallete
+    #0359b6	- dark blue
+    #3BACF1	- light blue
+    #2969D6 - mid dark blue
+    #132540 - navy blue
+    #6a6d78 - gray
+    #383838 - dark gray
+    #0097B2 - logo pallete
+  */
+
   /* Import Font */
   @font-face {
     src: url(../fonts/Poppins-Regular.ttf);
@@ -27,49 +38,49 @@
   /* header */
 
   header {
+    width: 1150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 0 100px 30px 100px;
+    background-color: #eae7e6;
   }
-  
+
+  .slogan{
+    display: flex;
+    align-items: center;
+    font-family: 'Lucida Sans', sans-serif;
+    color: #132540;;
+    height: 55px;
+    padding-top: 30px;
+    border-bottom: solid 4px #132540;
+  }
+
+  .slogan strong{
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #132540;
+  }
+
+  .slogan p{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 25px;
+  }
+
+  .slogan p span{
+    font-size: 2rem;
+    letter-spacing: 4px;
+    font-weight: 800;
+    color: #132540;
+  }
+
   .logo {
     cursor: pointer;
     height: 6rem;
-  }
-
-  .library_location_container{
-    padding: 3px;
-    display: flex;
-  }
-
-  .library_location_container .pin_wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .library_location_container .pin_wrapper img{
-    width: 30px;
-    height: 30px;
-    transform: rotate(-30deg);
-    padding-right: 10px;
-  }
-
-  .library_location_container .address_wrapper{
-    letter-spacing: -.5px;
-    line-height: 17px;
-  }
-
-  .library_location_container .address_wrapper p{
-    font-family: Poppins-Semibold;
-    font-size: medium;
-    text-align: center;
-  }
-
-  .library_location_container .address_wrapper p span{
-    font-size: small;
-    font-weight: 500;
+    padding-top: 30px;
   }
 
   .navbar-register{
@@ -77,23 +88,26 @@
   }
 
   /* Register */
-  .navbar-register li {
-    display: inline-block;
-    padding: 10px 10px;
-    border-radius: 12%;
-    width: 70px;
-    height: 20px;
-    padding-bottom: 15px;
-    background-color: #2969D6;
-    transition: all .2s linear;
-  }
-
-  .navbar-register li a {
+  .navbar-register{
+    padding-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FFFFFF;
-    font-family: Poppins;
+    gap: 10px;
+  }
+
+  .navbar-register li{
+    list-style: none;
+    background-color: #0097B2;
+    padding: 10px 15px;
+    border-radius: 12%;
+    transition: all .2s linear;
+    font-size: .9rem;
+  }
+
+  .navbar-register li a{
+    color: #FFFF;
+    font-family: Poppins, sans-serif;
   }
 
   .navbar-register li:hover{
@@ -103,13 +117,14 @@
   /* Navbar Link */
   .navbar-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    background-color: #0359b6;
+    background-color: #0097B2;
     height: 50px;
     list-style: none;
     font-size: 20px;
-    padding: 0px 10%;
+    padding: 0px 50px;
+    margin-top: 0;
   }
 
   .navbar-links li a, .footer-links li a, .footer-info li a{
@@ -136,17 +151,17 @@
   }
 
   #submenu{
-    right: 30px;
+    right: 10px;
     opacity: 1;
     position: absolute;
-    top: 260px;
+    top: 210px;
     visibility: hidden;
     z-index: 2;
     list-style: none;
     padding: 5px;
     width: 250px;
     line-height: 50px;
-    background-color: #0359b6;
+    background-color: #0097B2;
     border-radius: 10px;
     text-align: center;
   }
@@ -165,11 +180,16 @@
   /* footer */
   footer {
     width: 100%;
-    background-color: #0359b6;
+    background-color: #0097B2;
     position: relative;
     bottom: 0;
     left: 0;
     margin-top: 0px;
+  }
+
+  .footer-content{
+    padding-top: 5px;
+    margin-top: 1rem;
   }
 
   .footer-links{
@@ -183,7 +203,7 @@
   .footer-links li span {
     color: white;
     font-weight: 300;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 20px;
   }
 
   .horizontal-line {
@@ -217,6 +237,7 @@
     color: white;
     font-family: Poppins;
     font-size: small;
+    font-weight: 600;
   }
 
   .footer-info span {
@@ -265,6 +286,22 @@
     font-family: Poppins;
     font-size: small;
     padding-right: 100px;
+    color: white;
+  }
+
+  .copyright{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .copyright p{
+    font-size: small;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    color: white;
   }
 
   /*Carousel*/
@@ -272,7 +309,7 @@
     position: relative;
     width: 100%;
     height: 500px;
-    background: #2969D6;
+    background: #0097B2;
     margin-bottom: 50px;
   }
 
@@ -349,6 +386,7 @@
   .about_container {
     margin-top: 10rem;
     display: flex;
+    /* border: solid 1px black; */
   }
 
   .about_container img {
@@ -373,7 +411,7 @@
     font-size: 16px;
     border-radius: 10%;
     color: #FFFF;
-    background-color: #0359b6;
+    background-color: #0097B2;
     padding: 8px 18px;
     margin-top: 20px;
     transition-duration: 0.3s;
@@ -388,6 +426,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: solid 1px black; */
   }
 
   .NewAndUpdateTitle h1{
@@ -524,6 +563,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: solid 1px black; */
   }
 
   .topbooks_wrapper{
@@ -622,15 +662,13 @@
 
   /* ----- BOOKS PAGE ------ */
   .booksPage_container {
-    /* border: solid 1px red; markings */
     display: flex;
     padding: 1px;
+    height: 1800px;
   }
 
   /* Books Header*/
   .books_header {
-    position: relative;
-    top: -80px;
     /* border: solid 1px violet; markings */
     width: 88%;
     display: flex;
@@ -684,15 +722,9 @@
 
   /* books */
   .books_container {
-    min-height: 100vh;
     width: 80%;
-    /* border: solid 1px black; markings */
-    height: 2000px;
+    height: 1800px;
     padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
 
   .books_wrapper {
@@ -882,9 +914,8 @@
 
   /* Pagination */
   .pagination {
-    /* border: solid 1px brown; markings */
     position: relative;
-    bottom: -120px;
+    bottom: 20px;
     text-align: center;
     margin: 30px 30px 60px;
     user-select: none;
@@ -1162,6 +1193,14 @@
     font-size: .95em;
   }
 
+  .briefHistory_info-1 p, .briefHistory_info_wrapper{
+    border: solid 0 transparent;
+    background-color: rgba(245, 245, 245, 0.8);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    border-radius: 15px;
+    padding: 20px 50px 20px 50px;
+  }
+
   .briefHistory_info-2{
     font-size: .95em;
     display: flex;
@@ -1241,8 +1280,614 @@
     text-align: center;
   }
 
+  /* BOOKS */
+  .bookpage_container{
+    padding: 5%;
+  }
+
+  .GoBack{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    width: 110px;
+    height: 45px;
+  }
+
+  .GoBack a{
+    text-decoration: none;
+    color: black;
+    display: flex
+  }
+
+  .GoBack img{
+    height: 20px;
+    width: 20px;
+  }
+
+  .GoBack h4{
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+  }
+
+  .GoBack:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .bookinfo_container{
+    display: flex;
+    padding-right: 50px;
+    margin-top: 40px;
+  }
+
+  .bookFrontCover{
+    margin-right: 50px;
+  }
+  
+  .bookinfo-1 h2{
+    margin: 0;
+    letter-spacing: 2px;
+  }
+
+  .bookinfo-1 h5{
+    font-weight: 400;
+    font-size: .9rem;
+  }
+
+  .bookinfo-1 ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .bookinfo-1 p{
+    text-align: justify;
+  }
+
+  .bookinfo-1 button{
+    font-size: .9rem;
+    padding: 5px 40px;
+    background-color: #0359b6;
+    color: #FFFF;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+
   /* Media Queries */
-  @media (max-width: 820px) {
+
+  /* 2xl */
+  /* @media (max-width: 4000px){
+    header{
+      width: 1835px;
+      padding: 30px 0;
+    }
+
+    footer, .img-slider, .about_container, .NewAndUpdate_container, .topBooks_Title, 
+    .NewAndUpdateTitle, .topbooks_container{
+      width: 1835px;
+    }
+
+    .logo{
+      height: 8rem;
+    }
+
+    .library_location_container .address_wrapper p{
+      font-size: 1.5rem;
+    }
+
+    .library_location_container .address_wrapper p span{
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    .navbar-register{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar-register li{
+      padding: 15px 25px;
+    }
+
+    .navbar-register li a{
+      font-size: 20px;
+    }
+
+    .navbar-links{
+      height: 60px;
+      font-size: 1.6rem;
+    }
+
+    .navbar-links{
+      width: 1755px;
+      padding: 0 40px;
+    }
+
+    .img-slider{
+      height: 600px;
+    }
+
+    .img-slider .slide img{
+      height: 600px;
+    }
+
+    .about_container img{
+      width: 600px;
+      height: 400px;
+    }
+
+    .brief_aboutUs{
+      padding: 45px 100px 0 0;
+    }
+
+    .brief_aboutUs h2{
+      font-size: 2.7rem;
+    }
+
+    .brief_aboutUs p{
+      font-size: 1.4rem;
+    }
+
+    .brief_aboutUs button{
+      font-size: 20px;
+      padding: 10px 25px;
+    }
+
+    .topBooks_Title, .NewAndUpdateTitle{
+      font-size: 1.4rem;
+    }
+
+    .topbooks_wrapper .topbooks_carousel{
+      gap: 50px;
+    }
+
+    .topbooks_carousel .frontcover{
+      width: 260px;
+      height: 550px;
+    }
+
+    .topbooks_carousel .frontcover img{
+      width: 250px;
+      height: 480px;
+    }
+
+    .topbooks_carousel .frontcover ul{
+      font-size: 30px;
+    }
+
+    .topbooks_carousel .frontcover h2{
+      font-size: 24px;
+    }
+
+    .topbooks_carousel .frontcover .seemore_container a span{
+      font-size: 18px;
+    }
+
+    .topbooks_carousel .frontcover .seemore_container a img{
+      height: 25px;
+      width: 25px;
+    }
+
+    .NewsAndUpdate_wrapper .NewsAndUpdate_carousel{
+      gap: 50px;
+    }
+
+    .NewsAndUpdate_carousel .cards{
+      width: 340px;
+      height: 420px;
+    }
+
+    .newsimage_container img{
+      width: 330px;
+      height: 230px;
+    }
+
+    .cards span{
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      padding-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .footer-links li span{
+      font-weight: 400;
+    }
+
+    .horizontal-line{
+      width: 1780px;
+    }
+
+    .site-info p{
+      font-weight: 300;
+      font-size: 1rem;
+    }
+
+    .site-info p span{
+      font-size: 1.1rem;
+    }
+
+    .footer-info li a{
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .footer-info span{
+      font-size: 1.1rem;
+    }
+
+    .social-icons .fab{
+      width: 30px;
+      height: 30px;
+      padding: 7px;
+    }
+
+    .social-icons p{
+      font-size: 1.2rem;
+    }
+
+    .vl{
+      height: 130px;
+    }
+  } */
+
+  /* xl */
+  /* @media (max-width: 1440px){
+    header{
+      width: 1365px;
+      padding: 20px 0;
+    }
+
+    footer, .img-slider, .about_container, .NewAndUpdate_container, .topBooks_Title, 
+    .NewAndUpdateTitle, .topbooks_container{
+      width: 1365px;
+    }
+
+    .logo{
+      height: 7rem;
+    }
+
+    .library_location_container .address_wrapper p{
+      font-size: 1.4rem;
+    }
+
+    .library_location_container .address_wrapper p span{
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+
+    .navbar-register li{
+      padding: 12px 22px;
+    }
+
+    .navbar-register li a{
+      font-size: 18px;
+    }
+
+    .navbar-links{
+      height: 55px;
+      font-size: 1.5rem;
+    }
+
+    .navbar-links{
+      width: 1285px;
+      padding: 0 40px;
+    }
+
+    .img-slider{
+      height: 550px;
+    }
+
+    .img-slider .slide img{
+      height: 550px;
+    }
+
+    .about_container img{
+      width: 550px;
+      height: 350px;
+      margin: 3%;
+      padding-top: 9px;
+    }
+
+    .brief_aboutUs{
+      padding: 0 50px 0 0;
+    }
+
+    .brief_aboutUs h2{
+      font-size: 2.5rem;
+    }
+
+    .brief_aboutUs p{
+      font-size: 1.3rem;
+    }
+
+    .brief_aboutUs button{
+      font-size: 18px;
+      padding: 9px 20px;
+    }
+
+    .topBooks_Title, .NewAndUpdateTitle{
+      font-size: 1.3rem;
+    }
+
+    .topbooks_wrapper .topbooks_carousel{
+      gap: 50px;
+    }
+
+    .topbooks_carousel .frontcover{
+      width: 260px;
+      height: 550px;
+    }
+
+    .topbooks_carousel .frontcover img{
+      width: 250px;
+      height: 480px;
+    }
+
+    .topbooks_carousel .frontcover ul{
+      font-size: 30px;
+    }
+
+    .topbooks_carousel .frontcover h2{
+      font-size: 24px;
+    }
+
+    .topbooks_carousel .frontcover .seemore_container a span{
+      font-size: 18px;
+    }
+
+    .topbooks_carousel .frontcover .seemore_container a img{
+      height: 25px;
+      width: 25px;
+    }
+
+    .NewsAndUpdate_wrapper .NewsAndUpdate_carousel{
+      gap: 50px;
+    }
+
+    .NewsAndUpdate_carousel .cards{
+      width: 340px;
+      height: 420px;
+    }
+
+    .newsimage_container img{
+      width: 330px;
+      height: 230px;
+    }
+
+    .cards span{
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      padding-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .footer-links li span{
+      font-weight: 400;
+    }
+
+    .horizontal-line{
+      width: 1900px;
+    }
+
+    .site-info p{
+      font-weight: 300;
+      font-size: 1rem;
+    }
+
+    .site-info p span{
+      font-size: 1.1rem;
+    }
+
+    .footer-info li a{
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .footer-info span{
+      font-size: 1.1rem;
+    }
+
+    .social-icons .fab{
+      width: 30px;
+      height: 30px;
+    }
+
+    .social-icons p{
+      font-size: 1.2rem;
+    }
+
+    .vl{
+      height: 130px;
+    }
+  } */
+
+
+  /* MY LAPTOP SCREEN SIZE */ 
+  /* @media (max-width: 1326px){
+    header{
+      width: 1365px;
+      padding: 20px 0;
+    }
+
+    footer, .img-slider, .about_container, .NewAndUpdate_container, .topBooks_Title, 
+    .NewAndUpdateTitle, .topbooks_container{
+      width: 1365px;
+    }
+
+    .logo{
+      height: 7rem;
+    }
+
+    .library_location_container .address_wrapper p{
+      font-size: 1.4rem;
+    }
+
+    .library_location_container .address_wrapper p span{
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+
+    .navbar-register li{
+      padding: 12px 22px;
+    }
+
+    .navbar-register li a{
+      font-size: 18px;
+    }
+
+    .navbar-links{
+      height: 55px;
+      font-size: 1.5rem;
+    }
+
+    .navbar-links{
+      width: 1285px;
+      padding: 0 40px;
+    }
+
+    .img-slider{
+      height: 550px;
+    }
+
+    .img-slider .slide img{
+      height: 550px;
+    }
+
+    .about_container img{
+      width: 550px;
+      height: 350px;
+      margin: 3%;
+      padding-top: 9px;
+    }
+
+    .brief_aboutUs{
+      padding: 0 50px 0 0;
+    }
+
+    .brief_aboutUs h2{
+      font-size: 2.5rem;
+    }
+
+    .brief_aboutUs p{
+      font-size: 1.3rem;
+    }
+
+    .brief_aboutUs button{
+      font-size: 18px;
+      padding: 9px 20px;
+    }
+
+    .topBooks_Title, .NewAndUpdateTitle{
+      font-size: 1.3rem;
+    }
+
+    .topbooks_wrapper .topbooks_carousel{
+      gap: 50px;
+    }
+
+    .topbooks_carousel .frontcover{
+      width: 260px;
+      height: 550px;
+    }
+
+    .topbooks_carousel .frontcover img{
+      width: 250px;
+      height: 480px;
+    }
+
+    .topbooks_carousel .frontcover ul{
+      font-size: 30px;
+    }
+
+    .topbooks_carousel .frontcover h2{
+      font-size: 24px;
+    }
+
+    .topbooks_carousel .frontcover .seemore_container a span{
+      font-size: 18px;
+    }
+
+    .topbooks_carousel .frontcover .seemore_container a img{
+      height: 25px;
+      width: 25px;
+    }
+
+    .NewsAndUpdate_wrapper .NewsAndUpdate_carousel{
+      gap: 50px;
+    }
+
+    .NewsAndUpdate_carousel .cards{
+      width: 340px;
+      height: 420px;
+    }
+
+    .newsimage_container img{
+      width: 330px;
+      height: 230px;
+    }
+
+    .cards span{
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      padding-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .footer-links li span{
+      font-weight: 400;
+    }
+
+    .horizontal-line{
+      width: 1900px;
+    }
+
+    .site-info p{
+      font-weight: 300;
+      font-size: 1rem;
+    }
+
+    .site-info p span{
+      font-size: 1.1rem;
+    }
+
+    .footer-info li a{
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .footer-info span{
+      font-size: 1.1rem;
+    }
+
+    .social-icons .fab{
+      width: 30px;
+      height: 30px;
+    }
+
+    .social-icons p{
+      font-size: 1.2rem;
+    }
+
+    .vl{
+      height: 130px;
+    }
+  } */
+
+
+
+
+
+
+  /* @media (max-width: 820px) {
     .img-slider {
       width: 600px;
       height: 375px;
@@ -1332,7 +1977,7 @@
     .img-slider .navigation {
       bottom: 10px;
     }
-  }
+  } */
 
 /*  ===================   TOBIAS CSS   ===================*/
 .center{

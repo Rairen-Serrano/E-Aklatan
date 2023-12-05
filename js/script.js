@@ -8,6 +8,8 @@ $(function(){
   $("#footer-placeholder").load("footer.html");
   $("#newspage-navbar-placeholder").load("newspage_navbar.html");
   $("#newspage-footer-placeholder").load("newspage_footer.html");
+  $("#book-navbar-placeholder").load("book_navbar.html");
+  $("#book-footer-placeholder").load("book_footer.html");
 });
 
 //Switch Statement for different HTML pages
