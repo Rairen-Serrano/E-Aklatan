@@ -124,7 +124,7 @@ switch(page){
 
     $(function(){
       var numberOfItems = $(".books_wrapper .book").length;
-      var limitPerPage = 16; //How many books visible per page
+      var limitPerPage = 12; //How many books visible per page
       var totalPages = Math.ceil(numberOfItems / limitPerPage);
       var paginationSize = 7; //How many page elements visible in the pagination
       var currentPage;
@@ -169,6 +169,79 @@ switch(page){
         return showPage(currentPage - 1);
       });
     });
+
+
+
+    // Live Search Bar
+    $(document).ready(function(){
+    $("#live_search").keyup(function(){
+    var input = $(this).val();
+
+    if(input != ""){
+      $.ajax({
+        url:"livesearch.php",
+        method:"POST",
+        data:{input: input},
+        success:function(data){
+          $("#searchresult").html(data);
+          $("#searchresult").css("display","block");
+        }
+      });
+    }else {
+      // Clear the search results and hide the display when the input is empty
+      $("#searchresult").html("");
+      $("#searchresult").css("display","none");
+      }
+    });
+  });
+
+
+
+
+
+
+
+    //For making book-wrapper and pagination hidden when the result of the live_search appears
+    document.addEventListener("DOMContentLoaded", function () {
+        var liveSearchInput = document.getElementById("live_search");
+        var bookWrapperDiv = document.getElementById("book-wrapper");
+        var hide_pagination = document.getElementById("hide_pagination");
+
+        // Function to check live search input and hide/show book-wrapper
+        function checkLiveSearchInput() {
+            // Check if live_search input has any value
+            if (liveSearchInput.value.trim() !== "") {
+                // Hide the book-wrapper
+                bookWrapperDiv.style.display = "none";
+                hide_pagination.style.display = "none";
+            } else {
+                // Show the book-wrapper
+                bookWrapperDiv.style.display = "block";
+                hide_pagination.style.display = "block";
+            }
+        }
+
+        // Initial check when the page loads
+        checkLiveSearchInput();
+
+        // Attach an event listener to live_search input
+        liveSearchInput.addEventListener("input", checkLiveSearchInput);
+    });
+
+    
+    
+  
+    
+    
+
+
+
+
+
+
+
+
+
 
   //Script for EBooks Page
   case 'EBooksPage':
@@ -318,19 +391,6 @@ switch(page){
         return showPage(currentPage - 1);
       });
     });
-
-  case 'NewspaperPage':
-    //Annual Report Carousel
-    const annualReportcarousel = document.querySelector(".annualReports_carousel");
-    const annualReport_arrowBtn = document.querySelectorAll(".annualReports_wrapper .arrowBtn");
-    const annualReportFrontCoverWidth = annualReportcarousel.querySelector(".annualReports_frontcover").offsetWidth;
-
-    //Add event Listener for the arrow buttons to scroll the carousel left and right
-    annualReport_arrowBtn.forEach(btn => {
-       btn.addEventListener("click", () => {
-        annualReportcarousel.scrollLeft += btn.id === "leftbutton" ? -annualReportFrontCoverWidth : annualReportFrontCoverWidth;
-       });
-     });
 }
   
 

@@ -18,6 +18,12 @@
     <!--one line code for navbar-->
     <div id="navbar-placeholder"></div>
 
+
+    <!-- include the dbconnect.php for call the database -->
+    <?php
+        include("dbconnect.php");
+    ?>
+
     <!--Carousel-->
     <div class="img-slider">
         <div class="slide active">
@@ -78,151 +84,54 @@
         </div>
     </div>
 
+
+
+
+
+
+
     <!-- TOP BOOKS -->
     <div class="topBooks_Title"><h1>TOP BOOKS</h1></div>
-
     <div class="topbooks_container">
         <div class="topbooks_wrapper">
             <img id="leftbutton" src="../images/angle-left-solid.svg" alt="LeftAngle" class="arrowBtn"></img>
-            <ul class="topbooks_carousel">
-                <li class="frontcover">
-                    <a href="../html/books/virtualLight1993.html"><img src="../images/booksFrontCover/VirtualLight1993.JPG" alt="BookFrontCover"></a>
-                    <h2>Virtual Light</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
-                    </div>
-                </li>
+            
+            <?php 
+                $Topbooks_sql="SELECT BookID, FrontCover, BookTitle, Ratings FROM books WHERE GenreID='5' or GenreID='6' ORDER BY BOOKID LIMIT 10";
+                $Topbooks_query=mysqli_query($dbconnect, $Topbooks_sql);
+                $Topbooks_set=mysqli_fetch_assoc($Topbooks_query);
+                
+            ?>
 
-                <li class="frontcover">
-                    <img src="../images/bookFrontCover.webp" alt="BookFrontCover">
-                    <h2>The Hypocrite World</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
-                    </div>
-                </li>
+            <div class="topbooks_carousel">
+                <?php
+                    do{ ?>
+                    <div class="frontcover">
+                        <a href="../html/book_info.php?BookID=<?php echo $Topbooks_set['BookID']?>"> 
+                        <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($Topbooks_set['FrontCover']).'"/>'; ?>
+                        <h2><?php echo $Topbooks_set['BookTitle']; ?></h2>
+                        <h5><?php echo $Topbooks_set['Ratings']; ?></h5> </a>
 
-                <li class="frontcover">
-                    <img src="../images/bookFrontCover.webp" alt="BookFrontCover">
-                    <h2>The Hypocrite World</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
+                        <div class="seemore_container">
+                            <a href="../html/book_info.php?BookID=<?php echo $Topbooks_set['BookID']?>"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
+                        </div>
                     </div>
-                </li>
-
-                <li class="frontcover">
-                    <img src="../images/bookFrontCover.webp" alt="BookFrontCover">
-                    <h2>The Hypocrite World</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
-                    </div>
-                </li>
-
-                <li class="frontcover">
-                    <img src="../images/bookFrontCover.webp" alt="BookFrontCover">
-                    <h2>The Hypocrite World</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
-                    </div>
-                </li>
-
-                <li class="frontcover">
-                    <img src="../images/bookFrontCover.webp" alt="BookFrontCover">
-                    <h2>The Hypocrite World</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
-                    </div>
-                </li>
-
-                <li class="frontcover">
-                    <img src="../images/bookFrontCover.webp" alt="BookFrontCover">
-                    <h2>The Hypocrite World</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
-                    </div>
-                </li>
-
-                <li class="frontcover">
-                    <img src="../images/bookFrontCover.webp" alt="BookFrontCover">
-                    <h2>The Hypocrite World</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
-                    </div>
-                </li>
-
-                <li class="frontcover">
-                    <img src="../images/bookFrontCover.webp" alt="BookFrontCover">
-                    <h2>The Hypocrite World</h2>
-                    <ul>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>★</a></li>
-                        <li><a>☆</a></li>
-                    </ul>
-                    <div class="seemore_container">
-                        <a href="#"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
-                    </div>
-                </li>
-            </ul>
+                <?php
+                    }while($Topbooks_set=mysqli_fetch_assoc($Topbooks_query)); ?>
+            </div>
             <img id="rightbutton" src="../images/angle-right-solid.svg" alt="RightAngle" class="arrowBtn"></img>
         </div>
     </div>
+
+    
+
+
+
+
+
+
+
+
 
     <!-- Library News and Updates Carousel -->
     <div class="NewAndUpdateTitle"><h1>NEWS & UPDATES</h1></div>
