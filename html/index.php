@@ -70,12 +70,20 @@
         </div>
     </div>
 
+
+    <div class="video_container">
+        <div class="video_wrapper">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMyMakatiVerified%2Fvideos%2F364585132538098%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+    </div>
+
+
     <!-- Brief About Us -->
     <div class="about_container">
         <img src="../images/about_img.jpg" alt="about_us_image">
         <div class="brief_aboutUs">
             <h2>What is E-Aklatan?</h2>
-            <p>Welcome to E-Aklatan: Makati City Library Learning Commons, 
+            <p>Welcome to E-Aklatan: Makati City Public Library Digital Repository, 
                 your gateway to a world of knowledge and learning. E-Aklatan is more than 
                 just an electronic library; it's a vibrant hub of resources and opportunities 
                 designed to empower individuals in their pursuit of education, research, and personal 
