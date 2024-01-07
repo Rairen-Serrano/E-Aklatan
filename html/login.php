@@ -76,21 +76,22 @@
               <div class="main-mockup">
                   <div class="w3l_form align-self">
                       <div class="left_grid_info">
-                          <img src="../images/image.svg" alt="">
+                          <img src="../images/Login-img-removebg.png" alt="">
                       </div>
                   </div>
                   <div class="content-wthree">
                       <h2>Login Now</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                      <p>"Dive into Wisdom: Open the Chapters of Knowledge, Log into E-Aklatan!"</p>
                       <?php echo $msg; ?>
                       <form action="" method="post">
                           <input type="email" class="email" name="email" placeholder="Enter Your Email" required>
                           <input type="password" class="password" name="password" placeholder="Enter Your Password" style="margin-bottom: 2px;" required>
-                          <p><a href="../html/forgot-password.php" style="margin-bottom: 15px; display: block; text-align: right;">Forgot Password?</a></p>
+                          <p><a href="../html/forgot-password.php" style="margin-bottom: 15px; display: block; text-align: right; color :#0097B2; text-decoration: none;">Forgot Password?</a></p>
                           <button name="submit" name="submit" class="btn" type="submit">Login</button>
                       </form>
                       <div class="social-icons">
-                          <p>Create Account! <a href="register.php">Register</a>.</p>
+                          <p>Create Account! <a href="register.php" style="text-decoration: none; color: #0097B2;">Register</a>.</p>
+                          <p>Are you an admin? Log in here: <a href="admin_login.php" style="text-decoration: none; color: #0097B2;">Admin Account</a></p>
                       </div>
                   </div>
               </div>

@@ -58,12 +58,12 @@
                 <div class="main-mockup">
                     <div class="w3l_form align-self">
                         <div class="left_grid_info">
-                            <img src="../images/image3.svg" alt="">
+                            <img src="../images/change_password-img-removebg-preview.png" alt="">
                         </div>
                     </div>
                     <div class="content-wthree">
                         <h2>Change Password</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <p>"Lost and Found: Rediscover Security, Change Your Password with E-Aklatan!" </p>
                         <?php echo $msg; ?>
                         <form action="" method="post">
                             <input type="password" class="password" name="password" placeholder="Enter Your New Password" required>
@@ -71,7 +71,7 @@
                             <button name="submit" class="btn" type="submit">Change Password</button>
                         </form>
                         <div class="social-icons">
-                            <p>Back to! <a href="index.php">Login</a>.</p>
+                            <p>Back to! <a href="index.php" style="text-decoration: none; color: #0097B2;">Login</a>.</p>
                         </div>
                     </div>
                 </div>

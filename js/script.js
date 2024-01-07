@@ -4,12 +4,13 @@
 
 // to use navbar.html repeatedly by placing <div id="nav-placeholder"></div> in top of the body tag
 $(function(){
-  $("#navbar-placeholder").load("navbar.html");
+  $("#navbar-placeholder").load("navbar.php");
   $("#footer-placeholder").load("footer.html");
   $("#newspage-navbar-placeholder").load("newspage_navbar.html");
   $("#newspage-footer-placeholder").load("newspage_footer.html");
   $("#book-navbar-placeholder").load("book_navbar.html");
   $("#book-footer-placeholder").load("book_footer.html");
+  $("#admin-navbar-placeholder").load("admin_navbar.php");
 });
 
 //Switch Statement for different HTML pages
@@ -317,6 +318,68 @@ switch(page){
       });
     });
 
+
+
+
+
+    // Live Search Bar
+    $(document).ready(function(){
+      $("#ebook_live_search").keyup(function(){
+      var input = $(this).val();
+  
+      if(input != ""){
+        $.ajax({
+          url:"ebooks_livesearch.php",
+          method:"POST",
+          data:{input: input},
+          success:function(data){
+            $("#searchresult").html(data);
+            $("#searchresult").css("display","block");
+          }
+        });
+      }else {
+        // Clear the search results and hide the display when the input is empty
+        $("#searchresult").html("");
+        $("#searchresult").css("display","none");
+        }
+      });
+    });
+
+
+
+
+
+  //For making book-wrapper and pagination hidden when the result of the live_search appears
+  document.addEventListener("DOMContentLoaded", function () {
+    var liveSearchInput = document.getElementById("ebook_live_search");
+    var bookWrapperDiv = document.getElementById("book-wrapper");
+    var hide_pagination = document.getElementById("hide_pagination");
+
+    // Function to check live search input and hide/show book-wrapper
+    function checkLiveSearchInput() {
+      // Check if live_search input has any value
+        if (liveSearchInput.value.trim() !== "") {
+          // Hide the book-wrapper
+          bookWrapperDiv.style.display = "none";
+          hide_pagination.style.display = "none";
+        } else {
+          // Show the book-wrapper
+          bookWrapperDiv.style.display = "block";
+          hide_pagination.style.display = "block";
+        }
+    }
+
+    // Initial check when the page loads
+    checkLiveSearchInput();
+
+    // Attach an event listener to live_search input
+    liveSearchInput.addEventListener("input", checkLiveSearchInput);
+  });
+
+
+
+
+
     
   //Script for Journal Page
   case 'JournalPage':
@@ -391,11 +454,37 @@ switch(page){
         return showPage(currentPage - 1);
       });
     });
+
+  // script for book_info.php
+  case 'book_info':
+    // popup for borrowing book
+    document.querySelector("#borrow-btn").addEventListener("click", function(){
+      document.querySelector(".popup").classList.add("active");
+    });
+
+    // closing popup for borrowing book
+    document.querySelector(".popup .close-btn").addEventListener("click", function(){
+      document.querySelector(".popup").classList.remove("active");
+    });
+
+  case 'profile_page':
+    document.getElementById("fileImg").onchange = function(){
+      document.getElementById("profile_picture").src = URL.createObjectURL(fileImg.files[0]); // Preview new image
+
+      document.getElementById("cancel").style.display="block";
+      document.getElementById("confirm").style.display="block";
+
+      document.getElementById("upload").style.display="none";
+    };
+
+    var userImage = document.getElementById('profile_picture').src;
+    document.getElementById("cancel").onclick = function() {
+      document.getElementById("profile_picture").src = userImage; // Back to previous image
+
+      document.getElementById("cancel").style.display="none";
+      document.getElementById("confirm").style.display="none";
+
+      document.getElementById("upload").style.display="block";
+    };
+
 }
-  
-
-/*  ===================   WAYCO SCRIPT   ===================*/
-
-/*  ===================   VICQUERRA SCRIPT   ===================*/
-
-/*  ===================   TOBIAS SCRIPT   ===================*/

@@ -30,8 +30,11 @@
             if ($password === $confirm_password) {
                 $users_sql = "INSERT INTO users (name, email, password, code) VALUES ('{$name}', '{$email}', '{$password}', '{$code}')";
                 $users_query = mysqli_query($dbconnect, $users_sql);
-
+                
                 if ($users_query) {
+                    // Insert initial data into account_details table
+                    $account_details_sql = "INSERT INTO account_details (UserID, first_name, email) VALUES (LAST_INSERT_ID(), '{$name}','{$email}')";
+                    $account_details_query = mysqli_query($dbconnect, $account_details_sql);
                     echo "<div style='display: none;'>";
                     //Create an instance; passing `true` enables exceptions
                     $mail = new PHPMailer(true);
@@ -110,22 +113,22 @@
               <div class="main-mockup">
                   <div class="w3l_form align-self">
                       <div class="left_grid_info">
-                          <img src="../images/image2.svg" alt="">
+                          <img src="../images/register-img-removebg-preview.png" alt="" style="width: 600px;">
                       </div>
                   </div>
                   <div class="content-wthree">
                       <h2>Register Now</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                      <p>"Elevate Your Reading Experience: Enroll with E-Aklatan and Open a Portal to Infinite Knowledge!" </p>
                       <?php echo $msg; ?>
                       <form action="" method="post">
-                          <input type="text" class="name" name="name" placeholder="Enter Your Name" value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
+                          <input type="text" class="name" name="name" placeholder="Enter Full Name" value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
                           <input type="email" class="email" name="email" placeholder="Enter Your Email" value="<?php if (isset($_POST['submit'])) { echo $email; } ?>" required>
                           <input type="password" class="password" name="password" placeholder="Enter Your Password" required>
                           <input type="password" class="confirm-password" name="confirm-password" placeholder="Enter Your Confirm Password" required>
                           <button name="submit" class="btn" type="submit">Register</button>
                       </form>
                       <div class="social-icons">
-                          <p>Have an account! <a href="../html/login.php">Login</a>.</p>
+                          <p>Have an account! <a href="../html/login.php" style="text-decoration: none; color: #0097B2;">Login</a>.</p>
                       </div>
                   </div>
               </div>
