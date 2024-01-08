@@ -47,14 +47,14 @@ if (isset($_POST['delete_data'])) {
 }
 
 // Fetch data
-if (isset($_GET['bookID'])) {
-    $selectedBookID = $_GET['bookID'];
+if (isset($_GET['userID'])) {
+    $selectedUserID = $_GET['userID'];
 
     $sql = "SELECT bf.UserID, bf.BookID, b.BookTitle, bf.date_borrowed, bf.return_date
             FROM borrowers_form bf
             JOIN users u ON bf.UserID = u.UserID
             JOIN books b ON bf.BookID = b.BookID
-            WHERE bf.BookID = $selectedBookID
+            WHERE bf.UserID = $selectedUserID
             ORDER BY bf.UserID";
 
     $result = mysqli_query($dbconnect, $sql);
@@ -80,8 +80,8 @@ if (isset($_GET['bookID'])) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
                             <tr>
-                                <td><a class="userid_link" href='user_management.php?userID=<?php echo $row['UserID']; ?>'><?php echo $row['UserID']; ?></a></td>
-                                <td><a href='book_management.php?bookID=<?php echo $row['BookID']; ?>'><?php echo $row['BookID']; ?></a></td>
+                                <td><a style="text-decoration: none; color: #0097B2" href='user_management.php?userID=<?php echo $row['UserID']; ?>'><?php echo $row['UserID']; ?></a></td>
+                                <td><a style="text-decoration: none; color: #0097B2" href='book_management.php?bookID=<?php echo $row['BookID']; ?>'><?php echo $row['BookID']; ?></a></td>
                                 <td><?php echo $row['BookTitle']; ?></td>
                                 <td><?php echo $row['date_borrowed']; ?></td>
                                 <td><?php echo $row['return_date']; ?></td>
@@ -93,7 +93,6 @@ if (isset($_GET['bookID'])) {
                         ?>
                     </tbody>
                 </table>
-                <input type="submit" value="Delete Selected">
             </div>
         </form>
         <?php
@@ -132,7 +131,7 @@ if (isset($_GET['bookID'])) {
                             ?>
                             <tr>
                                 <td><a style="text-decoration: none; color: #0097B2" href='user_management.php?userID=<?php echo $rowAllData['UserID']; ?>'><?php echo $rowAllData['UserID']; ?></a></td>
-                                <td><a class="userid_link" href='book_management.php?bookID=<?php echo $rowAllData['BookID']; ?>'><?php echo $rowAllData['BookID']; ?></a></td>
+                                <td><a style="text-decoration: none; color: #0097B2" href='book_management.php?bookID=<?php echo $rowAllData['BookID']; ?>'><?php echo $rowAllData['BookID']; ?></a></td>
                                 <td><?php echo $rowAllData['BookTitle']; ?></td>
                                 <td><?php echo $rowAllData['date_borrowed']; ?></td>
                                 <td><?php echo $rowAllData['return_date']; ?></td>

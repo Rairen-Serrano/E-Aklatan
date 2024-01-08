@@ -158,7 +158,7 @@ if (isset($_GET['userID'])) {
                         while ($rowAllUsers = mysqli_fetch_assoc($resultAllUsers)) {
                             ?>
                             <tr>
-                                <td><a href='borrowedbooks_management.php?userID=<?php echo $rowAllUsers['UserID']; ?>'><?php echo $rowAllUsers['UserID']; ?></a></td>
+                                <td><a class="userid_link" href='borrowedbooks_management.php?userID=<?php echo $rowAllUsers['UserID']; ?>'><?php echo $rowAllUsers['UserID']; ?></a></td>
                                 <td><?php echo $rowAllUsers['userEmail']; ?></td>
                                 <td><?php echo $rowAllUsers['first_name']; ?></td>
                                 <td><?php echo $rowAllUsers['last_name']; ?></td>

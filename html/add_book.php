@@ -49,8 +49,8 @@
             // Prepare the SQL statement
             $stmt = mysqli_prepare($dbconnect, $sql);
 
-            // Bind parameters to the statement
-            mysqli_stmt_bind_param($stmt, "sbssdss", $bookTitle, $frontCover, $author, $genre, $publishedDate, $ratings, $abstract);
+            // Bind parameters to the statement using "b" for binary data
+            mysqli_stmt_bind_param($stmt, "ssssdss", $bookTitle, $frontCover, $author, $genre, $publishedDate, $ratings, $abstract);
 
             // Execute the statement
             $result = mysqli_stmt_execute($stmt);
