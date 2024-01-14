@@ -1547,6 +1547,21 @@
   border-bottom-right-radius: 8px;
 }
 
+.password_errors ul{
+  margin: 0;
+  list-style: none;
+  font-size: .9rem;
+  color: #FF5050;
+}
+
+.content-wthree img{
+  position: absolute;
+  width: 25px;
+  cursor: pointer;
+  right: 70px;
+  top: 240px;
+}
+
 .w3l-mockup-form .main-mockup {
   position: relative;
   display: -webkit-box;

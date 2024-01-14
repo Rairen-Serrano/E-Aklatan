@@ -62,7 +62,7 @@
     <title>Login Page</title>
 
 </head>
-<body1>
+<body id="login_page">
   <!--one line code for navbar-->
   <div id="navbar-placeholder"></div>
     
@@ -85,7 +85,8 @@
                       <?php echo $msg; ?>
                       <form action="" method="post">
                           <input type="email" class="email" name="email" placeholder="Enter Your Email" required>
-                          <input type="password" class="password" name="password" placeholder="Enter Your Password" style="margin-bottom: 2px;" required>
+                          <input type="password" id="user_password" class="password" name="password" placeholder="Enter Your Password" style="margin-bottom: 2px;" required>
+                          <img src="../images/eye-close.png" id="eye_icon">
                           <p><a href="../html/forgot-password.php" style="margin-bottom: 15px; display: block; text-align: right; color :#0097B2; text-decoration: none;">Forgot Password?</a></p>
                           <button name="submit" name="submit" class="btn" type="submit">Login</button>
                       </form>
@@ -106,5 +107,5 @@
 
   <!--one line code for footer-->
   <div id="footer-placeholder"></div>
-</body1>
+</body>
 </html>

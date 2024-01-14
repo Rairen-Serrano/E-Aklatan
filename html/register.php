@@ -71,6 +71,10 @@
                     $msg = "<div class = 'alert alert-danger'>Something went wrong.</div>";
                 }
             } else {
+                ?>
+                
+
+                <?php
                 $msg = "<div class = 'alert alert-danger'>Password and Confirm Password do not match.</div>";
             }
         }
@@ -99,44 +103,55 @@
 
 </head>
 <body id="registerPage">
-  <!--one line code for navbar-->
-    <div id="navbar-placeholder"></div>
+    <!--one line code for navbar-->
+        <div id="navbar-placeholder"></div>
     
 
 
 
-  <!-- form section start -->
-  <section class="w3l-mockup-form">
-      <div class="container">
-          <!-- /form -->
-          <div class="workinghny-form-grid">
-              <div class="main-mockup">
-                  <div class="w3l_form align-self">
-                      <div class="left_grid_info">
-                          <img src="../images/register-img-removebg-preview.png" alt="" style="width: 600px;">
-                      </div>
-                  </div>
-                  <div class="content-wthree">
-                      <h2>Register Now</h2>
-                      <p>"Elevate Your Reading Experience: Enroll with E-Aklatan and Open a Portal to Infinite Knowledge!" </p>
-                      <?php echo $msg; ?>
-                      <form action="" method="post">
-                          <input type="text" class="name" name="name" placeholder="Enter Full Name" value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
-                          <input type="email" class="email" name="email" placeholder="Enter Your Email" value="<?php if (isset($_POST['submit'])) { echo $email; } ?>" required>
-                          <input type="password" class="password" name="password" placeholder="Enter Your Password" required>
-                          <input type="password" class="confirm-password" name="confirm-password" placeholder="Enter Your Confirm Password" required>
-                          <button name="submit" class="btn" type="submit">Register</button>
-                      </form>
-                      <div class="social-icons">
-                          <p>Have an account! <a href="../html/login.php" style="text-decoration: none; color: #0097B2;">Login</a>.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- //form -->
-      </div>
-  </section>
-  <!-- //form section start -->
+    <!-- form section start -->
+    <section class="w3l-mockup-form">
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-mockup">
+                    <div class="w3l_form align-self">
+                        <div class="left_grid_info">
+                            <img src="../images/register-img-removebg-preview.png" alt="" style="width: 600px;">
+                        </div>
+                    </div>
+                    <div class="content-wthree">
+                        <h2>Register Now</h2>
+                        <p>"Elevate Your Reading Experience: Enroll with E-Aklatan and Open a Portal to Infinite Knowledge!" </p>
+                        <?php echo $msg; ?>
+                        <form action="" method="post">
+                            <input type="text" class="name" name="name" placeholder="Enter Full Name" value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
+                            <input type="email" class="email" name="email" placeholder="Enter Your Email" value="<?php if (isset($_POST['submit'])) { echo $email; } ?>" required>
+                            <input type="password" id="register_password1" class="password" name="password" placeholder="Enter Your Password" onkeyup="return validate()" required>
+                            <img src="../images/eye-close.png" id="eyeicon1" style="top: 319px">
+                            <div class="password_errors">
+                                <ul>
+                                    <li id="upper">Atleast one uppercase</li>
+                                    <li id="lower">Atleast one lowercase</li>
+                                    <li id="special_char">Atleast one special character</li>
+                                    <li id="number">Atleast one number</li>
+                                    <li id="length">Atleast 6 characters</li>
+                                </ul>
+                            </div>
+                            <input type="password" id="register_password2" class="confirm-password" name="confirm-password" placeholder="Enter Your Confirm Password" required>
+                            <img src="../images/eye-close.png" id="eyeicon2" style="top: 483px">
+                            <button name="submit" class="btn" type="submit">Register</button>
+                        </form>
+                        <div class="social-icons">
+                            <p>Have an account! <a href="../html/login.php" style="text-decoration: none; color: #0097B2;">Login</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+    </section>
+    <!-- //form section start -->
 
 
 

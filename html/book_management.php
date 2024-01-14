@@ -16,7 +16,7 @@
     <title>User Management Page</title>
 
 </head>
-<body>
+<body id="book_management">
   <!--one line code for navbar-->
   <div id="admin-navbar-placeholder"></div>
 
@@ -51,6 +51,9 @@
             }
         }
 
+        ?>
+
+        <?php
         // Fetch data
         if (isset($_GET['bookID'])) {
             $selectedBookID = $_GET['bookID'];
@@ -63,7 +66,7 @@
 
             if ($result) {
                 ?>
-                <div class="dashboard_container">
+                <div class="dashboard_container" id="dashboard_container">
                     <form method="post">
                         <table class="dashboard_table">
                             <thead>
@@ -107,7 +110,16 @@
             if (mysqli_num_rows($result) == 0) {
                 echo "Book not found.";
             }
-        } else {
+        } else { ?>
+
+            <div class="search-container">
+                <input class="searchbar" id="bookmanagement_livesearch" type="search" placeholder="Search.." name="search">
+            </div>
+
+            <div id="searchresult"></div>
+
+        <?php
+
             // BookID not provided in the URL, display the list of all books
             $sql = "SELECT BookID, BookTitle, Author, Genre, PublishedDate FROM books";
             $result = mysqli_query($dbconnect, $sql);

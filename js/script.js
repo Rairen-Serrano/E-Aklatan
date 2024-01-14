@@ -1,8 +1,7 @@
 //Universal Script
 
-/*  ===================   SERRANO SCRIPT   ===================*/
 
-// to use navbar.html repeatedly by placing <div id="nav-placeholder"></div> in top of the body tag
+// to use navbar.php repeatedly by placing <div id="nav-placeholder"></div> in top of the body tag
 $(function(){
   $("#navbar-placeholder").load("navbar.php");
   $("#footer-placeholder").load("footer.html");
@@ -486,5 +485,143 @@ switch(page){
 
       document.getElementById("upload").style.display="block";
     };
+
+  case 'book_management':
+    // Live Search Bar
+    $(document).ready(function(){
+      $("#bookmanagement_livesearch").keyup(function(){
+      var input = $(this).val();
+  
+      if(input != ""){
+        $.ajax({
+          url:"bookmanagement_livesearch.php",
+          method:"POST",
+          data:{input: input},
+          success:function(data){
+            $("#searchresult").html(data);
+            $("#searchresult").css("display","block");
+          }
+        });
+      }else {
+        // Clear the search results and hide the display when the input is empty
+        $("#searchresult").html("");
+        $("#searchresult").css("display","none");
+        }
+      });
+    });
+  
+  
+  
+  
+  
+  
+      //For making table and pagination hidden when the result of the live_search appears
+      document.addEventListener("DOMContentLoaded", function () {
+          var liveSearchInput = document.getElementById("bookmanagement_livesearch");
+          var dashboardDiv = document.getElementById("dashboard_container form");
+  
+          // Function to check live search input and hide/show table
+          function checkLiveSearchInput() {
+              // Check if live_search input has any value
+              if (liveSearchInput.value.trim() !== "") {
+                  // Hide the table
+                  dashboardDiv.style.display = "none";
+              } else {
+                  // Show the table
+                  dashboardDiv.style.display = "block";
+              }
+          }
+  
+          // Initial check when the page loads
+          checkLiveSearchInput();
+  
+          // Attach an event listener to live_search input
+          liveSearchInput.addEventListener("input", checkLiveSearchInput);
+      });
+
+  case 'login_page':
+    let eye_icon = document.getElementById("eye_icon");
+    let user_password = document.getElementById("user_password");
+
+    eye_icon.onclick = function(){
+      if(user_password.type == "password"){
+        user_password.type = "text";
+        eye_icon.src = "../images/eye-open.png";
+      } else {
+        user_password.type = "password";
+        eye_icon.src = "../images/eye-close.png";
+      }
+    }
+
+  case 'registerPage':
+    let eyeicon1 = document.getElementById("eyeicon1");
+    let eyeicon2 = document.getElementById("eyeicon2");
+    let register_password1 = document.getElementById("register_password1");
+    let register_password2 = document.getElementById("register_password2");
+
+    eyeicon1.onclick = function(){
+      if(register_password1.type == "password"){
+        register_password1.type = "text";
+        eyeicon1.src = "../images/eye-open.png";
+      } else {
+        register_password1.type = "password";
+        eyeicon1.src = "../images/eye-close.png";
+      }
+    }
+
+    eyeicon2.onclick = function(){
+      if(register_password2.type == "password"){
+        register_password2.type = "text";
+        eyeicon2.src = "../images/eye-open.png";
+      } else {
+        register_password2.type = "password";
+        eyeicon2.src = "../images/eye-close.png";
+      }
+    }
+
+    function validate(){
+      var pass = document.getElementById("register_password1");
+      var upper = document.getElementById('upper');
+      var lower = document.getElementById('lower');
+      var num = document.getElementById('number');
+      var len = document.getElementById('length');
+      var sp_char = document.getElementById('special_char');
+
+      //checks if the password value contain number
+      if(pass.value.match(/[0-9]/)){
+        num.style.color = 'green';
+      }else{
+        num.style.color = '#FF5050';
+      }
+
+      //checks if the password value contain uppercase
+      if(pass.value.match(/[A-Z]/)){
+        upper.style.color = 'green';
+      }else{
+        upper.style.color = '#FF5050';
+      }
+
+      //checks if the password value contain lowercase
+      if(pass.value.match(/[a-z]/)){
+        lower.style.color = 'green';
+      }else{
+        lower.style.color = '#FF5050';
+      }
+
+      //checks if the password value contain special character
+      if(pass.value.match(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\?\>\<\.\,]/)){
+        sp_char.style.color = 'green';
+      }else{
+        sp_char.style.color = '#FF5050';
+      }
+
+      //checks length of the password
+      if(pass.value.length > 6){
+        len.style.color = 'green';
+      }else{
+        len.style.color = '#FF5050';
+      }
+    }
+
 
 }
