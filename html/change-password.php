@@ -10,7 +10,9 @@
                 $confirm_password = mysqli_real_escape_string($dbconnect, md5($_POST['confirm-password']));
 
                 if ($password === $confirm_password) {
-                    $users_query = mysqli_query($dbconnect, "UPDATE users SET password='{$password}', code='' WHERE code='{$_GET['reset']}'");
+                    $password_creation_date = date('Y-m-d');
+
+                    $users_query = mysqli_query($dbconnect, "UPDATE users SET password='{$password}', password_creation_date='{$password_creation_date}', code='' WHERE code='{$_GET['reset']}'");
 
                     if($users_query) {
                         header("Location: login.php");

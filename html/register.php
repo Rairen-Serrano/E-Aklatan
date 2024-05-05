@@ -16,6 +16,7 @@
 
     include("dbconnect.php");
     $msg = "";
+    $password_creation_date = date('Y-m-d'); 
 
     if (isset($_POST['submit'])) {
         $name = mysqli_real_escape_string($dbconnect, $_POST['name']);
@@ -25,10 +26,11 @@
         $code = mysqli_real_escape_string($dbconnect, md5(rand()));
 
         if (mysqli_num_rows(mysqli_query($dbconnect, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
-            $msg = "<div class = 'alert alert-danger'>{$email} - This email address has been already exists.</div>";
+            $msg = "<div class = 'alert alert-danger'>{$email} - This email address is already exists.</div>";
         } else {
             if ($password === $confirm_password) {
-                $users_sql = "INSERT INTO users (name, email, password, code) VALUES ('{$name}', '{$email}', '{$password}', '{$code}')";
+                $users_sql = "INSERT INTO users (name, email, password, code, password_creation_date) 
+                VALUES ('{$name}', '{$email}', '{$password}', '{$code}', '{$password_creation_date}')";
                 $users_query = mysqli_query($dbconnect, $users_sql);
                 
                 if ($users_query) {

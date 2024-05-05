@@ -31,6 +31,16 @@
         if (mysqli_num_rows($users_result) === 1){
             $users_row = mysqli_fetch_assoc($users_result);
 
+            $password_creation_date = strtotime($users_row['password_creation_date']);
+            $current_date = strtotime(date('Y-m-d'));
+            $expiry_date = strtotime('+1 year', $password_creation_date);
+
+
+            if ($current_date > $expiry_date) {
+                header("Location: change-password.php");
+                exit();
+            }
+
             if (empty($users_row['code'])) {
                 $_SESSION['SESSION_EMAIL'] = $email;
                 header("Location: profile.php");

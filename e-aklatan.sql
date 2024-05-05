@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2024 at 04:24 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: May 05, 2024 at 03:19 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,8 @@ CREATE TABLE `account_details` (
 INSERT INTO `account_details` (`account_id`, `UserID`, `first_name`, `last_name`, `middle_name`, `email`, `phone_number`, `date_of_birth`) VALUES
 (1, 16, 'Rairen', 'Serrano', 'Camacho', 'denden.serrano123@gmail.com', '123', '2000-07-02'),
 (16, 36, 'Joemaire', 'Wayco', 'Rizle', 'rigefip559@konican.com', '09199191919', '2000-02-02'),
-(17, 37, 'Kenn', 'Tamayo', 'Angelo', 'cijow12710@idsho.com', '', '0000-00-00');
+(17, 37, 'Kenn', 'Tamayo', 'Angelo', 'cijow12710@idsho.com', '', '0000-00-00'),
+(22, 42, 'sample1', NULL, NULL, 'kenntamayo6@gmail.com', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -288,6 +289,8 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
+  `password_creation_date` date DEFAULT NULL,
+  `password_last_changed` timestamp NULL DEFAULT NULL,
   `code` text NOT NULL,
   `profile_picture` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -296,10 +299,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserID`, `name`, `email`, `password`, `code`, `profile_picture`) VALUES
-(16, 'Denden', 'denden.serrano123@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', '', '659524153eb13profile-picture.jpg'),
-(36, 'Joemaire Wayco', 'rigefip559@konican.com', '917eb5e9d6d6bca820922a0c6f7cc28b', '', '65a7bdfab297djoemaire.JPG'),
-(37, 'Kenn', 'cijow12710@idsho.com', 'c698cd6595cd2f438f72d180b61c7242', '', '662b31018e87fschedule.png');
+INSERT INTO `users` (`UserID`, `name`, `email`, `password`, `password_creation_date`, `password_last_changed`, `code`, `profile_picture`) VALUES
+(16, 'Denden', 'denden.serrano123@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', NULL, NULL, '', '659524153eb13profile-picture.jpg'),
+(36, 'Joemaire Wayco', 'rigefip559@konican.com', '917eb5e9d6d6bca820922a0c6f7cc28b', NULL, NULL, '', '65a7bdfab297djoemaire.JPG'),
+(37, 'Kenn', 'cijow12710@idsho.com', 'c698cd6595cd2f438f72d180b61c7242', NULL, NULL, '', '662b31018e87fschedule.png'),
+(42, 'sample1', 'kenntamayo6@gmail.com', '95f2d4f06ff86ac80000447fd0990a91', '2024-05-05', NULL, '', '');
 
 --
 -- Indexes for dumped tables
@@ -358,7 +362,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `account_details`
 --
 ALTER TABLE `account_details`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -394,7 +398,7 @@ ALTER TABLE `journals`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Constraints for dumped tables
