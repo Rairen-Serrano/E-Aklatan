@@ -30,6 +30,7 @@
 <nav>
     <ul class="navbar-links">
         <li><a style="text-decoration: none" href="../html/user_management.php">USER MANAGEMENT</a></li>
+        <li><a style="text-decoration: none" href="../html/user_logs.php">USER LOGS</a></li>
         <li><a style="text-decoration: none" href="../html/borrowedbooks_management.php">BORROWED BOOKS MANAGEMENT</a></li>
         <li><a style="text-decoration: none" href="../html/book_management.php">BOOKS MANAGEMENT</a></li>
     </ul> 

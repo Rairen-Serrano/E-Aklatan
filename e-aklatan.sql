@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2024 at 03:19 PM
+-- Generation Time: May 06, 2024 at 08:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -290,20 +290,21 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `password_creation_date` date DEFAULT NULL,
-  `password_last_changed` timestamp NULL DEFAULT NULL,
   `code` text NOT NULL,
-  `profile_picture` varchar(50) NOT NULL
+  `profile_picture` varchar(50) NOT NULL,
+  `time_log_in` timestamp NULL DEFAULT NULL,
+  `time_log_out` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserID`, `name`, `email`, `password`, `password_creation_date`, `password_last_changed`, `code`, `profile_picture`) VALUES
-(16, 'Denden', 'denden.serrano123@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', NULL, NULL, '', '659524153eb13profile-picture.jpg'),
-(36, 'Joemaire Wayco', 'rigefip559@konican.com', '917eb5e9d6d6bca820922a0c6f7cc28b', NULL, NULL, '', '65a7bdfab297djoemaire.JPG'),
-(37, 'Kenn', 'cijow12710@idsho.com', 'c698cd6595cd2f438f72d180b61c7242', NULL, NULL, '', '662b31018e87fschedule.png'),
-(42, 'sample1', 'kenntamayo6@gmail.com', '95f2d4f06ff86ac80000447fd0990a91', '2024-05-05', NULL, '', '');
+INSERT INTO `users` (`UserID`, `name`, `email`, `password`, `password_creation_date`, `code`, `profile_picture`, `time_log_in`, `time_log_out`) VALUES
+(16, 'Denden', 'denden.serrano123@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', NULL, '', '659524153eb13profile-picture.jpg', NULL, NULL),
+(36, 'Joemaire Wayco', 'rigefip559@konican.com', '917eb5e9d6d6bca820922a0c6f7cc28b', NULL, '', '65a7bdfab297djoemaire.JPG', NULL, NULL),
+(37, 'Kenn', 'cijow12710@idsho.com', 'c698cd6595cd2f438f72d180b61c7242', NULL, '', '662b31018e87fschedule.png', NULL, NULL),
+(42, 'sample1', 'kenntamayo6@gmail.com', '95f2d4f06ff86ac80000447fd0990a91', '2024-05-05', '', '', '2024-05-06 06:20:29', '2024-05-06 06:24:01');
 
 --
 -- Indexes for dumped tables

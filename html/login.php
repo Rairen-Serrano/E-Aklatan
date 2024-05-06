@@ -18,7 +18,7 @@
 
         } else {
             header("Location: login.php");
-        }
+        } 
     }
 
     if(isset($_POST['submit'])) {
@@ -31,9 +31,14 @@
         if (mysqli_num_rows($users_result) === 1){
             $users_row = mysqli_fetch_assoc($users_result);
 
+            $update_login_time = "UPDATE users SET time_log_in = NOW(), time_log_out = NULL WHERE email = '{$email}'";
+            mysqli_query($dbconnect, $update_login_time);
+
             $password_creation_date = strtotime($users_row['password_creation_date']);
             $current_date = strtotime(date('Y-m-d'));
             $expiry_date = strtotime('+1 year', $password_creation_date);
+
+            
 
 
             if ($current_date > $expiry_date) {
