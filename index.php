@@ -19,7 +19,7 @@
     <div id="navbar-placeholder"></div>
 
 
-    <!-- include the dbconnect.php for call the databaseasdasd -->
+    <!-- include the dbconnect.php for call the database -->
     <?php
         include("dbconnect.php");
     ?>
