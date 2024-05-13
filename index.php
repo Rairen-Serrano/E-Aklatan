@@ -115,13 +115,13 @@
                 <?php
                     do{ ?>
                     <div class="frontcover">
-                        <a href="../html/book_info.php?BookID=<?php echo $Topbooks_set['BookID']?>"> 
+                        <a href="book_info.php?BookID=<?php echo $Topbooks_set['BookID']?>"> 
                         <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($Topbooks_set['FrontCover']).'"/>'; ?>
                         <h2><?php echo $Topbooks_set['BookTitle']; ?></h2>
                         <h5><?php echo $Topbooks_set['Ratings']; ?></h5> </a>
 
                         <div class="seemore_container">
-                            <a href="../html/book_info.php?BookID=<?php echo $Topbooks_set['BookID']?>"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
+                            <a href="book_info.php?BookID=<?php echo $Topbooks_set['BookID']?>"><span>SEE MORE</span><img src="../images/angle-right-solid.svg" alt="rightbtn"></a>
                         </div>
                     </div>
                 <?php
