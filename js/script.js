@@ -546,10 +546,10 @@ switch(page){
     eye_icon.onclick = function(){
       if(user_password.type == "password"){
         user_password.type = "text";
-        eye_icon.src = "../images/eye-open.png";
+        eye_icon.src = "images/eye-open.png";
       } else {
         user_password.type = "password";
-        eye_icon.src = "../images/eye-close.png";
+        eye_icon.src = "images/eye-close.png";
       }
     }
 
@@ -562,20 +562,20 @@ switch(page){
     eyeicon1.onclick = function(){
       if(register_password1.type == "password"){
         register_password1.type = "text";
-        eyeicon1.src = "../images/eye-open.png";
+        eyeicon1.src = "images/eye-open.png";
       } else {
         register_password1.type = "password";
-        eyeicon1.src = "../images/eye-close.png";
+        eyeicon1.src = "images/eye-close.png";
       }
     }
 
     eyeicon2.onclick = function(){
       if(register_password2.type == "password"){
         register_password2.type = "text";
-        eyeicon2.src = "../images/eye-open.png";
+        eyeicon2.src = "images/eye-open.png";
       } else {
         register_password2.type = "password";
-        eyeicon2.src = "../images/eye-close.png";
+        eyeicon2.src = "images/eye-close.png";
       }
     }
 
