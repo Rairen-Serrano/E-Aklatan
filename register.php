@@ -59,7 +59,7 @@
                         //Content
                         $mail->isHTML(true);                                  //Set email format to HTML
                         $mail->Subject = 'no reply';
-                        $mail->Body    = 'Here is the verification link <b><a href="http://localhost:3000/html/login.php?verification='.$code.'">http://localhost:3000/html/login.php?verification='.$code.'</a></b>';
+                        $mail->Body    = 'Here is the verification link <b><a href="http://localhost:3000/login.php?verification='.$code.'">http://localhost:3000/login.php?verification='.$code.'</a></b>';
 
                         $mail->send();
                         echo 'Message has been sent';
