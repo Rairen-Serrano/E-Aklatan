@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--CSS link here-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="
+    
+    css/style.css">
 
     <!--Javascript link here-->
     <script defer src="js/script.js" ></script>
@@ -158,7 +160,7 @@
                                 ?>
                             </tbody>
                         </table>
-                        <button type="submit" name="delete_button"><a style="text-decoration: none; color: black;" href="../html/add_book.php">Add Book</a></button>
+                        <button type="submit" name="delete_button"><a style="text-decoration: none; color: black;" href="add_book.php">Add Book</a></button>
                         <button type="submit" name="delete_button">Delete Selected Books</button>
                     </form>
                 </div>
