@@ -1,62 +1,96 @@
 <?php 
-    session_start();
-    if(isset($_SESSION['SESSION_EMAIL'])) {
-        header("Location: profile.php");
-        die();
-    }
+session_start();
+if (isset($_SESSION['SESSION_EMAIL'])) {
+    header("Location: profile.php");
+    die();
+}
 
-    include("dbconnect.php");
-    $msg = "";
+include("dbconnect.php");
 
-    if (isset($_GET['verification'])) {
-        if (mysqli_num_rows(mysqli_query($dbconnect, "SELECT * FROM users WHERE code ='{$_GET['verification']}'")) > 0) {
-            $users_query = mysqli_query($dbconnect, "UPDATE users SET code='' WHERE code='{$_GET['verification']}'");
-            
-            if ($users_query) {
-                $msg = "<div class='alert alert-success'>Account verification has been successfully completed.</div>";
-            }
+// Set the default time zone to match your local time
+date_default_timezone_set('Asia/Manila');  // Replace with your timezone
 
-        } else {
-            header("Location: login.php");
-        } 
-    }
+$msg = "";
 
-    if(isset($_POST['submit'])) {
-        $email = mysqli_real_escape_string($dbconnect, $_POST['email']);
-        $password = mysqli_real_escape_string($dbconnect, md5($_POST['password']));
-
-        $users_sql = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
-        $users_result = mysqli_query($dbconnect, $users_sql);
-
-        if (mysqli_num_rows($users_result) === 1){
-            $users_row = mysqli_fetch_assoc($users_result);
-
-            $update_login_time = "UPDATE users SET time_log_in = NOW(), time_log_out = NULL WHERE email = '{$email}'";
-            mysqli_query($dbconnect, $update_login_time);
-
-            $password_creation_date = strtotime($users_row['password_creation_date']);
-            $current_date = strtotime(date('Y-m-d'));
-            $expiry_date = strtotime('+1 year', $password_creation_date);
-
-            
-
-
-            if ($current_date > $expiry_date) {
-                header("Location: change-password.php");
-                exit();
-            }
-
-            if (empty($users_row['code'])) {
-                $_SESSION['SESSION_EMAIL'] = $email;
-                header("Location: profile.php");
-
-            } else {
-                $msg = "<div class='alert alert-info'>Verify your account first and try again.</div>";
-            }
-        } else {
-            $msg = "<div class='alert alert-danger'>Incorrect email or password.</div>";
+if (isset($_GET['verification'])) {
+    $verification_code = mysqli_real_escape_string($dbconnect, $_GET['verification']);
+    $result = mysqli_query($dbconnect, "SELECT * FROM users WHERE code = '$verification_code'");
+    if (mysqli_num_rows($result) > 0) {
+        $update_query = mysqli_query($dbconnect, "UPDATE users SET code='' WHERE code='$verification_code'");
+        if ($update_query) {
+            $msg = "<div class='alert alert-success'>Account verification has been successfully completed.</div>";
         }
+    } else {
+        header("Location: login.php");
+        exit();
     }
+}
+
+if (isset($_POST['submit'])) {
+    $email = mysqli_real_escape_string($dbconnect, $_POST['email']);
+    $password = mysqli_real_escape_string($dbconnect, md5($_POST['password']));
+    
+    $users_sql = "SELECT * FROM users WHERE email='$email'";
+    $users_result = mysqli_query($dbconnect, $users_sql);
+
+    if (mysqli_num_rows($users_result) === 1) {
+        $users_row = mysqli_fetch_assoc($users_result);
+        $failed_attempts = $users_row['failed_attempts'];
+        $lock_until = $users_row['lock_until'];
+
+        // Check if the account is locked
+        if ($lock_until && strtotime($lock_until) > time()) {
+            $msg = "<div class='alert alert-danger'>You have entered a lot of incorrect passwords. Please try again after " . date('l, g:i:s A, Y-m-d', strtotime($lock_until)) . ".</div>";
+        } else {
+            // Reset failed attempts and lock_until if lockout period has expired
+            if ($failed_attempts >= 5 && strtotime($lock_until) <= time()) {
+                $failed_attempts = 0;
+                $lock_until = null;
+                mysqli_query($dbconnect, "UPDATE users SET failed_attempts = 0, lock_until = NULL WHERE email='$email'");
+            }
+
+            // Verify password
+            if ($users_row['password'] === $password) {
+                // Reset failed attempts upon successful login
+                $failed_attempts = 0;
+                $lock_until = null;
+                mysqli_query($dbconnect, "UPDATE users SET failed_attempts = 0, lock_until = NULL WHERE email='$email'");
+
+                $update_login_time = "UPDATE users SET time_log_in = NOW(), time_log_out = NULL WHERE email = '$email'";
+                mysqli_query($dbconnect, $update_login_time);
+
+                $password_creation_date = strtotime($users_row['password_creation_date']);
+                $current_date = strtotime(date('Y-m-d'));
+                $expiry_date = strtotime('+1 year', $password_creation_date);
+
+                if ($current_date > $expiry_date) {
+                    header("Location: change-password.php");
+                    exit();
+                }
+
+                if (empty($users_row['code'])) {
+                    $_SESSION['SESSION_EMAIL'] = $email;
+                    header("Location: profile.php");
+                    exit();
+                } else {
+                    $msg = "<div class='alert alert-info'>Verify your account first and try again.</div>";
+                }
+            } else {
+                $failed_attempts++;
+                $msg = "<div class='alert alert-danger'>Incorrect email or password.</div>";
+
+                if ($failed_attempts >= 5) {
+                    $lock_until = date('Y-m-d H:i:s', strtotime('+5 minutes'));
+                }
+
+                $update_attempts_query = "UPDATE users SET failed_attempts = $failed_attempts, lock_until = '$lock_until' WHERE email='$email'";
+                mysqli_query($dbconnect, $update_attempts_query);
+            }
+        }
+    } else {
+        $msg = "<div class='alert alert-danger'>Incorrect email or password.</div>";
+    }
+}
 ?>
 
 <!DOCTYPE html>

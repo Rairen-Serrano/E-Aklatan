@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2024 at 04:15 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: May 25, 2024 at 09:59 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,10 +43,8 @@ CREATE TABLE `account_details` (
 --
 
 INSERT INTO `account_details` (`account_id`, `UserID`, `first_name`, `last_name`, `middle_name`, `email`, `phone_number`, `date_of_birth`) VALUES
-(1, 16, 'Rairen', 'Serrano', 'Camacho', 'denden.serrano123@gmail.com', '123', '2000-07-02'),
-(16, 36, 'Joemaire', 'Wayco', 'Rizle', 'rigefip559@konican.com', '09199191919', '2000-02-02'),
-(17, 37, 'Kenn', 'Tamayo', 'Angelo', 'cijow12710@idsho.com', '', '0000-00-00'),
-(22, 42, 'sample1', NULL, NULL, 'kenntamayo6@gmail.com', NULL, NULL);
+(26, 46, 'Kenn', 'Tamayo', '', 'kenntamayo6@gmail.com', '', '0000-00-00'),
+(27, 47, 'jessie', NULL, NULL, 'kenntamayo7@gmail.com', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -167,17 +165,6 @@ CREATE TABLE `borrowers_form` (
   `return_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `borrowers_form`
---
-
-INSERT INTO `borrowers_form` (`TransactionNo`, `BookID`, `UserID`, `FullName`, `HouseNo`, `Baranggay`, `City`, `ContactNo`, `DaytobeBorrowed`, `ValidID`, `date_borrowed`, `return_date`) VALUES
-(16, 3, 16, 'asd', 'asd', 'asd', 'asd', 'asd', '7', 0x44534346363538332e4a5047, '2024-01-07', '2024-01-14'),
-(40, 15, 16, 'Rairen Serrano', '4843 Solchuaga.', 'Brgy. Singkamas', 'Makati City', '09199243502', '3', 0x436f6d536f6342616e6e65722e706e67, '2024-01-16', '2024-01-19'),
-(41, 13, 16, 'Denden Serrano', '4930 Solchuaga St.', 'Brgy. Singkamas', 'Makati City', '09199243502', '5', 0x4163746976697479365f486973746f6772616d5f50524f425354412e504e47, '2024-01-17', '2024-01-22'),
-(42, 15, 36, 'Joemaire Wayco', '1234 Santos St.', 'Brgy. Pembo', 'Taguig City', '09123456789', '5', 0x436861696e52756c65312e4a5047, '2024-01-17', '2024-01-22'),
-(43, 16, 36, 'Joemaire Wayco', '1234 Santos St.', 'Brgy. Pembo', 'Taguig City', '09123456789', '5', 0x436861696e52756c65322e4a5047, '2024-01-17', '2024-01-22');
-
 -- --------------------------------------------------------
 
 --
@@ -293,18 +280,18 @@ CREATE TABLE `users` (
   `code` text NOT NULL,
   `profile_picture` varchar(50) NOT NULL,
   `time_log_in` timestamp NULL DEFAULT NULL,
-  `time_log_out` timestamp NULL DEFAULT NULL
+  `time_log_out` timestamp NULL DEFAULT NULL,
+  `failed_attempts` int(11) DEFAULT 0,
+  `lock_until` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserID`, `name`, `email`, `password`, `password_creation_date`, `code`, `profile_picture`, `time_log_in`, `time_log_out`) VALUES
-(16, 'Denden', 'denden.serrano123@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', NULL, '', '659524153eb13profile-picture.jpg', NULL, NULL),
-(36, 'Joemaire Wayco', 'rigefip559@konican.com', '917eb5e9d6d6bca820922a0c6f7cc28b', NULL, '', '65a7bdfab297djoemaire.JPG', NULL, NULL),
-(37, 'Kenn', 'cijow12710@idsho.com', 'c698cd6595cd2f438f72d180b61c7242', NULL, '', '662b31018e87fschedule.png', NULL, NULL),
-(42, 'sample1', 'kenntamayo6@gmail.com', '95f2d4f06ff86ac80000447fd0990a91', '2024-05-05', '', '', '2024-05-06 06:20:29', '2024-05-06 06:24:01');
+INSERT INTO `users` (`UserID`, `name`, `email`, `password`, `password_creation_date`, `code`, `profile_picture`, `time_log_in`, `time_log_out`, `failed_attempts`, `lock_until`) VALUES
+(46, 'kenn', 'kenntamayo6@gmail.com', '95f2d4f06ff86ac80000447fd0990a91', '2024-05-16', '', '', '2024-05-25 07:55:43', '2024-05-25 07:55:50', 0, NULL),
+(47, 'jessie', 'kenntamayo7@gmail.com', '95f2d4f06ff86ac80000447fd0990a91', '2024-05-25', 'ef9d0d56afcea65a3213be6d6f670ffa', '', NULL, NULL, 0, NULL);
 
 --
 -- Indexes for dumped tables
@@ -363,7 +350,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `account_details`
 --
 ALTER TABLE `account_details`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -399,7 +386,7 @@ ALTER TABLE `journals`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Constraints for dumped tables

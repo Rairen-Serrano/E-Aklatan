@@ -47,6 +47,7 @@
             <li><a style="text-decoration: none" href="ebooks.php">EBOOKS</a></li>
             <li><a style="text-decoration: none" href="journal.php">JOURNALS</a></li>
             <li><a style="text-decoration: none" href="newspaper.html">NEWSPAPER</a></li>
+            <li><a style="text-decoration: none" href="https://www.facebook.com/messages/t/334842009708304">CHAT SUPPORT</a></li>
             <li><a style="text-decoration: none" href="#">ABOUT US</a>
                 <ul id="submenu">
                     <li><a href="aboutUs.html">About City Library</a></li>
