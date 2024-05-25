@@ -27,6 +27,7 @@
     } else {
         header("Location: forgot-password.php");
     }
+
 ?>
 
 <!DOCTYPE html>
