@@ -7,8 +7,7 @@ if (isset($_SESSION['SESSION_EMAIL'])) {
 
 include("dbconnect.php");
 
-// Set the default time zone to match your local time
-date_default_timezone_set('Asia/Manila');  // Replace with your timezone
+date_default_timezone_set('Asia/Manila');
 
 $msg = "";
 
@@ -64,7 +63,7 @@ if (isset($_POST['submit'])) {
                 $expiry_date = strtotime('+1 year', $password_creation_date);
 
                 if ($current_date > $expiry_date) {
-                    header("Location: change-password.php");
+                    header("Location: expired-password.php?message=expired");
                     exit();
                 }
 
