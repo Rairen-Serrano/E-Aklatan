@@ -50,7 +50,7 @@
     display: flex;
     align-items: center;
     font-family: 'Lucida Sans', sans-serif;
-    color: #132540;;
+    color: #132540;
     height: 55px;
     padding-top: 30px;
     border-bottom: solid 4px #132540;
@@ -68,6 +68,7 @@
     font-weight: 600;
     margin: 0;
     line-height: 25px;
+    text-align: center;
   }
 
   .slogan p span{
@@ -2146,26 +2147,94 @@ textarea {
 
   
 
+
+
+
   @media only screen and (max-width: 425px){
     header{
-      background: gray;
-      width: 1120px;
-      padding: 20px 40px;
+      width: 1160px;
+      padding: 20px 30px
     }
+
+    .logo {
+      width: 190px;
+      height: 150px;
+    }
+
+    .slogan{
+      border-bottom: solid 5px #132540;
+      width: 770px;
+    }
+  
+    .slogan strong{ 
+      font-size: 7rem;
+      font-weight: 650;
+      padding-bottom: 20px;
+    }
+  
+    .slogan p{
+      font-size: 1.6rem;
+      line-height: 30px;
+      width: 750px;
+    }
+  
+    .slogan p span{
+      font-size: 2.8rem;
+      letter-spacing: 1.7px;
+    }
+
+
+
+
+  /* Register */
+  .navbar-register{
+    padding-top: 0;
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
+  .navbar-register li{
+    font-size: 1.2rem;
+    width: 80px;
+    text-align: center;
+  }
+
+
+
+  /* navbar links */
+  .navbar-links{
+    width: 1200px;
+    padding: 0 10px;
+    font-size: 1.8rem;
+    height: 70px;
+  }
+
+
+  #submenu{
+    left: 950px;
+    top: 300px;
+  }
+
+  #submenu li{
+    font-size: 1.3rem;
+  }
+
+
+
+
+
+
+
+
 
     footer, .img-slider, .about_container, .NewAndUpdate_container, .topBooks_Title, 
     .NewAndUpdateTitle, .topbooks_container, .video_container, .booksPage_container, .newspapers_body,
     .background_container, .container{
-      width: 1350px;
+      width: 1250px;
     }
 
     .background_container{
       width: 1245px;
-    }
-
-    .navbar-links{
-      width: 1310px;
-      padding: 0 20px;
     }
 
     .horizontal-line{

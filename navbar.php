@@ -3,7 +3,7 @@
 
         <div class="slogan">
             <strong>M</strong>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YOUR LOCAL GATEWAY TO INFORMATION<br><span>AKATI CITY PUBLIC LIBRARY</span></p>
+            <p>YOUR LOCAL GATEWAY TO INFORMATION<br><span>AKATI CITY PUBLIC LIBRARY</span></p>
         </div>
 
         <?php 
