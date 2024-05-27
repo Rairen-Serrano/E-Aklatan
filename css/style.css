@@ -1993,6 +1993,28 @@ textarea {
 }
 
 
+.collapsible-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.collapsible-header {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+
+
 
 
 
