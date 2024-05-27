@@ -1995,6 +1995,28 @@ textarea {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* Media Queries */
 
   /* 2xl */
@@ -2119,5 +2141,34 @@ textarea {
   @media only screen and (max-width: 768px) {
     .background_container{
       width: 1230px;
+    }
+  }
+
+  
+
+  @media only screen and (max-width: 425px){
+    header{
+      background: gray;
+      width: 1120px;
+      padding: 20px 40px;
+    }
+
+    footer, .img-slider, .about_container, .NewAndUpdate_container, .topBooks_Title, 
+    .NewAndUpdateTitle, .topbooks_container, .video_container, .booksPage_container, .newspapers_body,
+    .background_container, .container{
+      width: 1350px;
+    }
+
+    .background_container{
+      width: 1245px;
+    }
+
+    .navbar-links{
+      width: 1310px;
+      padding: 0 20px;
+    }
+
+    .horizontal-line{
+      width: 1300px;
     }
   }

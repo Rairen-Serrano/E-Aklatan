@@ -104,7 +104,7 @@
             <div class="profile_sidebarmenu">
                 <ul>
                     <li id="dashboard">Dashboard</li>
-                    <li id="read_later"> Read Later </li>
+                    <!-- <li id="read_later"> Read Later </li> -->
                     <li id="account">Account Details</li>
                     <li><a href="logout.php" style="text-decoration: none; color: black;">Logout</a></li>
                 </ul>
