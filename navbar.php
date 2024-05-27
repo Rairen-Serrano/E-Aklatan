@@ -47,7 +47,6 @@
             <li><a style="text-decoration: none" href="ebooks.php">EBOOKS</a></li>
             <li><a style="text-decoration: none" href="journal.php">JOURNALS</a></li>
             <li><a style="text-decoration: none" href="newspaper.html">NEWSPAPER</a></li>
-            <li><a style="text-decoration: none" href="https://www.facebook.com/messages/t/334842009708304">CHAT SUPPORT</a></li>
             <li><a style="text-decoration: none" href="#">ABOUT US</a>
                 <ul id="submenu">
                     <li><a href="aboutUs.html">About City Library</a></li>
@@ -55,6 +54,7 @@
                     <li><a href="mission&vision.html">Mission & Vision</a></li>
                     <li><a href="contactUs.html">Contact Us</a></li>
                     <li><a target="_blank" href="https://drive.google.com/file/d/1irBJCSH4AvPyVgZTg33aP2SzwxzOKgKW/view?usp=drive_link">Citizen's Charter</a></li>
+                    <li><a target="_blank" style="text-decoration: none" href="https://www.facebook.com/messages/t/334842009708304">Chat Support</a></li>
                 </ul>    
             </li>
         </ul> 

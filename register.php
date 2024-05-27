@@ -59,7 +59,7 @@
                         //Content
                         $mail->isHTML(true);                                  //Set email format to HTML
                         $mail->Subject = 'no reply';
-                        $mail->Body    = 'Here is the verification link <b><a href="http://e-aklatan.cloud/login.php?verification='.$code.'">http://e-aklatan.cloud/login.php?verification='.$code.'</a></b>';
+                        $mail->Body    = 'Here is the verification link <b><a href="http://localhost:3000/login.php?verification='.$code.'">http://localhost:3000/login.php?verification='.$code.'</a></b>';
 
                         $mail->send();
                         echo 'Message has been sent';
@@ -124,30 +124,39 @@
                     </div>
                     <div class="content-wthree">
                         <h2>Register Now</h2>
-                        <p>"Elevate Your Reading Experience: Enroll with E-Aklatan and Open a Portal to Infinite Knowledge!" </p>
+                        <p>"Elevate Your Reading Experience: Enroll with E-Aklatan and Open a Portal to Infinite Knowledge!"</p>
                         <?php echo $msg; ?>
                         <form action="" method="post">
                             <input type="text" class="name" name="name" placeholder="Enter Full Name" value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
                             <input type="email" class="email" name="email" placeholder="Enter Your Email" value="<?php if (isset($_POST['submit'])) { echo $email; } ?>" required>
-                            <input type="password" id="register_password1" class="password" name="password" placeholder="Enter Your Password" onkeyup="return validate()" required>
-                            <img src="images/eye-close.png" id="eyeicon1" style="top: 319px">
+                            
+                            <div class="password-container">
+                                <input type="password" id="register_password1" class="password" name="password" placeholder="Enter Your Password" onkeyup="return validate()" required>
+                                <img src="images/eye-close.png" id="eyeicon1" class="eye-icon" onclick="togglePasswordVisibility('register_password1', 'eyeicon1')">
+                            </div>
+                            
                             <div class="password_errors">
                                 <ul>
-                                    <li id="upper">Atleast one uppercase</li>
-                                    <li id="lower">Atleast one lowercase</li>
-                                    <li id="special_char">Atleast one special character</li>
-                                    <li id="number">Atleast one number</li>
-                                    <li id="length">Atleast 6 characters</li>
+                                    <li id="upper">At least one uppercase</li>
+                                    <li id="lower">At least one lowercase</li>
+                                    <li id="special_char">At least one special character</li>
+                                    <li id="number">At least one number</li>
+                                    <li id="length">At least 6 characters</li>
                                 </ul>
                             </div>
-                            <input type="password" id="register_password2" class="confirm-password" name="confirm-password" placeholder="Enter Your Confirm Password" required>
-                            <img src="images/eye-close.png" id="eyeicon2" style="top: 483px">
+                            
+                            <div class="password-container">
+                                <input type="password" id="register_password2" class="confirm-password" name="confirm-password" placeholder="Enter Your Confirm Password" required>
+                                <img src="images/eye-close.png" id="eyeicon2" class="eye-icon" onclick="togglePasswordVisibility('register_password2', 'eyeicon2')">
+                            </div>
+                            
                             <button name="submit" class="btn" type="submit">Register</button>
                         </form>
                         <div class="social-icons">
                             <p>Have an account! <a href="login.php" style="text-decoration: none; color: #0097B2;">Login</a>.</p>
                         </div>
                     </div>
+
                 </div>
             </div>
             <!-- //form -->

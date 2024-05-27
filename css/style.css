@@ -114,6 +114,21 @@
     background-color: #132540;
   }
 
+  /* Register */
+  .password-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .password-container input {
+    width: 100%; 
+    padding-right: 30px;
+    box-sizing: border-box;
+  }
+
+
   .navbar_profile{
     padding-top: 50px;
     width: 200px;
@@ -864,7 +879,7 @@
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
-    width: 400px;
+    width: 600px;
     padding: 20px 30px;
     background: #132540;
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .3);
@@ -908,48 +923,109 @@
     cursor: pointer;
   }
 
-  .popup .popup-form .form-element {
-    margin: 20px 0;
+
+
+
+
+
+  /* Styling for form elements */
+  .form-element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
   }
 
-  .popup .popup-form .form-element label {
-    font-size: 1rem;
-    font-weight: 520;
-    color: #FFF;
+  .form-element label {
+    flex: 0 0 200px;
+    font-weight: bold;
+    color: #CCC;
   }
 
-  .popup .popup-form .form-element input[type="text"] {
-    padding: 8px 10px;
-    width: 300px;
-    font-size: .9rem;
-    border-radius: 5px;
-    outline: none;
-    border: none;
+  .form-element input[type="file"] {
+    color: black;
+    background-color: white;
   }
 
-  .popup .popup-form .form-element input[type="file"]{
-    font-size: .9rem;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    color: #FFF;
+  .form-element input[type="text"],
+  .form-element input[type="file"],
+  .form-element select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    box-sizing: border-box;
   }
 
-  .popup .popup-form .form-element select{
-    border-radius: 5px;
-    padding: 3px 10px;
-    font-size: .9rem;
-    outline: none;
-    border: none;
+  /* Styling for submit button */
+  .button-container {
+    text-align: center;
   }
 
-  .borrow-submit{
-    font-size: .9rem;
-    font-weight: 550;
+  .borrow-submit {
+    display: inline-block;
     width: 100%;
-    padding: 10px 0;
-    border-radius: 8px;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
   }
+
+  .borrow-submit:hover {
+    background-color: #0056b3;
+  }
+
+  /* Styling for alert messages */
+  .alert {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 3px;
+  }
+
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+  }
+
+  .alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+  }
+
+  /* Styling for select element */
+  .form-element select {
+    height: 40px;
+  }
+
+  /* Additional styling for better appearance */
+  #borrow-form input[type="text"]::placeholder,
+  #borrow-form input[type="file"]::placeholder,
+  #borrow-form select::placeholder {
+    color: #999;
+  }
+
+  #borrow-form input[type="text"]:focus,
+  #borrow-form input[type="file"]:focus,
+  #borrow-form select:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+
+  #borrow-form button:focus {
+    outline: none;
+  }
+
+
+
+
+
 
   /* side bar */
   .sidebar_container {
@@ -1558,8 +1634,8 @@
   position: absolute;
   width: 25px;
   cursor: pointer;
-  right: 70px;
-  top: 240px;
+  right: 10px;
+  top: 13px;
 }
 
 .w3l-mockup-form .main-mockup {

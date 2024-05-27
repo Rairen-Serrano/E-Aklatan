@@ -42,27 +42,34 @@
     <div class="profile_container">
         <div class="profile_sidebar">
             <div class="profile_info">
-                <form action="" class="" enctype="multipart/form-data" method="post">
-                    <input type="hidden" name="id" value="<?php echo $users_row['UserID'] ?>">
-                    <div class="upload">
-                        <img src="images/<?php echo $users_row ['profile_picture']?>" id="profile_picture">
+            <form action="" class="" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="id" value="<?php echo $users_row['UserID'] ?>">
+                <div class="upload">
+                    <?php 
+                        $profilePicture = $users_row['profile_picture'];
+                        if (empty($profilePicture)) {
+                            $profilePicture = 'profile-picture.jpg';
+                        }
+                    ?>
+                    <img src="images/<?php echo $profilePicture ?>" id="profile_picture">
 
-                        <div class="rightRound" id="upload">
-                            <input type="file" name="fileImg" id="fileImg" accept=".jpg, .jpeg, .png, .webp">
-                            <i class="fa fa-camera"></i>
-                        </div>
-
-                        <div class="leftRound" id="cancel" style="display: none;">
-                            <i class="fa fa-times"></i>
-                        </div>
-
-                        <div class="rightRound" id="confirm" style="display: none;">
-                            <input type="submit" name="" value="">
-                            <i class="fa fa-check"></i>
-                        </div>
-
+                    <div class="rightRound" id="upload">
+                        <input type="file" name="fileImg" id="fileImg" accept=".jpg, .jpeg, .png, .webp">
+                        <i class="fa fa-camera"></i>
                     </div>
-                </form>
+
+                    <div class="leftRound" id="cancel" style="display: none;">
+                        <i class="fa fa-times"></i>
+                    </div>
+
+                    <div class="rightRound" id="confirm" style="display: none;">
+                        <input type="submit" name="" value="">
+                        <i class="fa fa-check"></i>
+                    </div>
+
+                </div>
+            </form>
+
 
                 <?php 
                     if(isset($_FILES["fileImg"]["name"])){
@@ -97,6 +104,7 @@
             <div class="profile_sidebarmenu">
                 <ul>
                     <li id="dashboard">Dashboard</li>
+                    <li id="read_later"> Read Later </li>
                     <li id="account">Account Details</li>
                     <li><a href="logout.php" style="text-decoration: none; color: black;">Logout</a></li>
                 </ul>

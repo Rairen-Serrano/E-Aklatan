@@ -59,7 +59,7 @@ if (isset($_GET['userID'])) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
                             <tr>
-                                <td><a class="userid_link" href='borrowedbooks_management.php?userID=<?php echo $row['UserID']; ?>'><?php echo $row['UserID']; ?></a></td>
+                                <td><a class="userid_link" href='user_management.php?userID=<?php echo $row['UserID']; ?>'><?php echo $row['UserID']; ?></a></td>
                                 <td><?php echo $row['userEmail']; ?></td>
                                 <td><?php echo $row['first_name']; ?></td>
                                 <td><?php echo $row['last_name']; ?></td>
@@ -111,7 +111,7 @@ if (isset($_GET['userID'])) {
                         while ($rowAllUsers = mysqli_fetch_assoc($resultAllUsers)) {
                             ?>
                             <tr>
-                                <td><a class="userid_link" href='borrowedbooks_management.php?userID=<?php echo $rowAllUsers['UserID']; ?>'><?php echo $rowAllUsers['UserID']; ?></a></td>
+                                <td><a class="userid_link" href='user_management.php?userID=<?php echo $rowAllUsers['UserID']; ?>'><?php echo $rowAllUsers['UserID']; ?></a></td>
                                 <td><?php echo $rowAllUsers['userEmail']; ?></td>
                                 <td><?php echo $rowAllUsers['first_name']; ?></td>
                                 <td><?php echo $rowAllUsers['last_name']; ?></td>

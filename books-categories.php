@@ -94,7 +94,7 @@
         <!-- Main Content -->
         <div class="books_container">
             <div class="books_header">
-                <a href="../html/books.php" style="text-decoration: none; color: black;"><h2>Books</h2></a>
+                <a href="books.php" style="text-decoration: none; color: black;"><h2>Books</h2></a>
                 <div class="search-container">
                     <input class="searchbar" type="search" placeholder="Search.." name="search">
                     <button class="searchbar_btn" type="submit"><p>Search</p></button>
@@ -120,7 +120,7 @@
 
                     // Display book information
                     ?>
-                    <a href="../html/book_info.php?BookID=<?php echo $booksCat_set['BookID'] ?>" style="text-decoration: none; color: black;">
+                    <a href="book_info.php?BookID=<?php echo $booksCat_set['BookID'] ?>" style="text-decoration: none; color: black;">
                         <div class="book">
                             <div class="book_img">
                                 <?php
@@ -128,7 +128,7 @@
                                 ?>
                             </div>
                             <div class="cover_container">
-                                <img src="../images/borrowBookButton.png">
+                                <img src="/images/borrowBookButton.png">
                             </div>
                             <div class="book_info">
                                 <h2><?php echo $booksCat_set['BookTitle']; ?></h2>

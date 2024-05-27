@@ -133,8 +133,10 @@ if (isset($_POST['submit'])) {
                       <?php echo $msg; ?>
                       <form action="" method="post">
                           <input type="email" class="email" name="email" placeholder="Enter Your Email" required>
-                          <input type="password" id="user_password" class="password" name="password" placeholder="Enter Your Password" style="margin-bottom: 2px;" required>
-                          <img src="images/eye-close.png" id="eye_icon">
+                        <div class="password-container">
+                            <input type="password" id="register_password1" class="password" name="password" placeholder="Enter Your Password" onkeyup="return validate()" required>
+                            <img src="images/eye-close.png" id="eyeicon1" class="eye-icon" onclick="togglePasswordVisibility('register_password1', 'eyeicon1')">
+                        </div>
                           <p><a href="forgot-password.php" style="margin-bottom: 15px; display: block; text-align: right; color :#0097B2; text-decoration: none;">Forgot Password?</a></p>
                           <button name="submit" name="submit" class="btn" type="submit">Login</button>
                       </form>

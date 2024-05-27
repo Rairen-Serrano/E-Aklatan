@@ -86,48 +86,60 @@
                             <div class="close-btn">&times;</div>
                             <h2>Borrower's Form</h2>
                             <div class="popup-form">
-                                <form action="" method="post" autocomplete="off" class="" enctype="multipart/form-data" id="borrow-form">
-                                    <div class="form-element">
-                                        <label for="full_name">Full Name: </label><br>
-                                        <input type="text" name="full_name" placeholder="Enter Your Full Name" required value="">
-                                    </div>
-                                    <div class="form-element">
-                                        <label for="house_number">House no. & Street: </label><br>
-                                        <input type="text" name="house_number" placeholder="Enter Your House no. & Street" required value="">
-                                    </div>
-                                    <div class="form-element">
-                                        <label for="baranggay">Baranggay: </label><br>
-                                        <input type="text" name="baranggay" placeholder="Enter Your Baranggay" required value="">
-                                    </div>
-                                    <div class="form-element">
-                                        <label for="city">City: </label><br>
-                                        <input type="text" name="city" placeholder="Enter Your City" required>
-                                    </div>
-                                    <div class="form-element">
-                                        <label for="contact_number">Contact Number: </label><br>
-                                        <input type="text" name="contact_number" placeholder="Enter Your Contact Number" required value="">
-                                    </div>
-                                    <div class="form-element">
-                                        <label for="days_borrowed">Days to be Borrowed: </label><br>
-                                        <select name="days_borrowed" id="days_borrowed">
-                                            <option value="3">3 Days</option>
-                                            <option value="5">5 Days</option>
-                                            <option value="7">7 Days</option>
-                                        </select>
-                                    </div>
-                                    <?php if(!empty($statusMsg)){ ?>
-                                        <p class="alert alert-<?php echo $status; ?>"><?php echo $statusMsg; ?></p>
-                                    <?php } ?>
-                                    <div class="form-element">
-                                        <label for="borrowers_id">Upload any valid ID or school ID: </label><br>
-                                        <input type="file" name="borrowers_id" id="borrowers_id" value="" required>
-                                    </div>
-                                    <div class="form-element">
-                                        <button type="submit" class="borrow-submit" id="submit-btn" name="borrow-submit">SUBMIT</button>
-                                    </div>
-                                </form>
+
+
+
+
+                            <form action="" method="post" autocomplete="off" class="" enctype="multipart/form-data" id="borrow-form">
+                                <div class="form-element">
+                                    <label for="full_name">Full Name: </label>
+                                    <input type="text" name="full_name" placeholder="Enter Your Full Name" required value="">
+                                </div>
+                                <div class="form-element">
+                                    <label for="house_number">House no. & Street: </label>
+                                    <input type="text" name="house_number" placeholder="Enter Your House no. & Street" required value="">
+                                </div>
+                                <div class="form-element">
+                                    <label for="baranggay">Baranggay: </label>
+                                    <input type="text" name="baranggay" placeholder="Enter Your Baranggay" required value="">
+                                </div>
+                                <div class="form-element">
+                                    <label for="city">City: </label>
+                                    <input type="text" name="city" placeholder="Enter Your City" required>
+                                </div>
+                                <div class="form-element">
+                                    <label for="contact_number">Contact Number: </label>
+                                    <input type="text" name="contact_number" placeholder="Enter Your Contact Number" required value="">
+                                </div>
+                                <div class="form-element">
+                                    <label for="days_borrowed">Days to be Borrowed: </label>
+                                    <select name="days_borrowed" id="days_borrowed">
+                                        <option value="3">3 Days</option>
+                                        <option value="5">5 Days</option>
+                                        <option value="7">7 Days</option>
+                                    </select>
+                                </div>
+                                <?php if (!empty($statusMsg)) { ?>
+                                    <p class="alert alert-<?php echo $status == 'success' ? 'success' : 'error'; ?>"><?php echo $statusMsg; ?></p>
+                                <?php } ?>
+                                <div class="form-element">
+                                    <label for="borrowers_id">Upload any valid ID or school ID: </label>
+                                    <input type="file" name="borrowers_id" id="borrowers_id" value="" required>
+                                </div>
+                                <div class="form-element button-container">
+                                    <button type="submit" class="borrow-submit" id="submit-btn" name="borrow-submit">SUBMIT</button>
+                                </div>
+                            </form>
+
+
+
 
                                 
+
+
+
+
+
                                 <?php // Inserting data that the user inputted in the Borrower's Form
                                     include ("dbconnect.php");
 
