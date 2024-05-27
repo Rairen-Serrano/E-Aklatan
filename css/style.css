@@ -176,7 +176,7 @@
     list-style: none;
     font-size: 20px;
     padding: 0px 50px;
-    margin-top: 0;
+    margin: 0;
   }
 
 
@@ -2174,75 +2174,91 @@ textarea {
 
   @media only screen and (max-width: 425px){
     header{
-      width: 1160px;
-      padding: 20px 30px
-    }
-
-    .logo {
-      width: 190px;
+      width: 385px;
+      padding: 0 20px;
       height: 150px;
     }
 
+    .logo {
+      width: 100px;
+      height: 80px;
+    }
+
     .slogan{
-      border-bottom: solid 5px #132540;
-      width: 770px;
+      visibility: hidden;
+      overflow: hidden;
     }
-  
-    .slogan strong{ 
-      font-size: 7rem;
-      font-weight: 650;
-      padding-bottom: 20px;
-    }
-  
-    .slogan p{
-      font-size: 1.6rem;
-      line-height: 30px;
-      width: 750px;
-    }
-  
-    .slogan p span{
-      font-size: 2.8rem;
-      letter-spacing: 1.7px;
-    }
+
+
+
+
+
+  /* Register */
+  .navbar-register li{
+    text-align: center;
+  }
+
+
 
 
 
 
   /* Register */
   .navbar-register{
-    padding-top: 0;
-    flex-direction: column;
-    padding-top: 30px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 
   .navbar-register li{
-    font-size: 1.2rem;
-    width: 80px;
-    text-align: center;
+    list-style: none;
+    background-color: #0097B2;
+    padding: 8px 13px;
+    border-radius: 20%;
+    transition: all .2s linear;
+    font-size: .7rem;
   }
+
+  .navbar-register li a{
+    color: #FFFF;
+    font-family: Poppins, sans-serif;
+  }
+
+  .navbar-register li:hover{
+    background-color: #132540;
+  } 
+
+
+
 
 
 
   /* navbar links */
   .navbar-links{
-    width: 1200px;
+    width: 405px;
     padding: 0 10px;
-    font-size: 1.8rem;
-    height: 70px;
+    font-size: .7rem;
+    height: 40px;
   }
+
+
+
 
 
   #submenu{
-    left: 950px;
-    top: 300px;
+    left: 260px;
+    top: 195px;
+    padding: 5px;
+    width: 150px;
+    line-height: 30px;
+    height: 210px;
   }
 
   #submenu li{
-    font-size: 1.3rem;
+    font-size: .7rem;
   }
-
-
-
 
 
 
