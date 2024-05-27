@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS link here-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Javascript link here-->
+    <script defer src="js/script.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.7.1.js" defer></script>
+
+    <title>Troubleshooting Page</title>
+
+</head>
+<body>
+    <!--one line code for navbar-->
+    <div id="navbar-placeholder"></div>
+    
+    <div style="height: 1000px;" class="background_container">
+        <div style="height: 800px;" class="container_wrapper">
+            <h3 style="margin-bottom: 2em;">Troubleshooting</h3>
+            <div class="contactUs-infowrapper" style="display: flex; justify-content: center; align-items: center;">
+                <div class="collapsible-box">
+                    <div class="collapsible-header">I can't log into my account. What should I do?</div>
+                    <div class="collapsible-content">
+                        <p>Check if you are entering the correct email address and password. If you forgot your password, use the "Forgot Password" link to reset it.</p>
+                    </div>
+                    <div class="collapsible-header">How do I reset my password?</div>
+                    <div class="collapsible-content">
+                        <p>Click on the "Forgot Password" link on the login page, enter your email address, and follow the instructions sent to your email to reset your password.</p>
+                    </div>
+                    <div class="collapsible-header">How do I create a new account?</div>
+                    <div class="collapsible-content">
+                        <p>Click on the "Sign Up" button on the homepage, fill in the required information, and follow the instructions to complete the registration process.</p>
+                    </div>
+                    <div class="collapsible-header">I'm not receiving the verification email. What should I do?</div>
+                    <div class="collapsible-content">
+                        <p>Check your spam/junk folder first. If it's not there, try resending the verification email or go back to our chat support and ask for live chat for further assistance.</p>
+                    </div>
+                    <div class="collapsible-header">What are the requirements for creating a password?</div>
+                    <div class="collapsible-content">
+                        <p>Your password should be at least 6 characters long, contain atleast 1 both upper and lower case letters, a number, and a special character.</p>
+                    </div>
+                    <div class="collapsible-header">How do I update my profile information?</div>
+                    <div class="collapsible-content">
+                        <p>Log in to your account, go to the "Profile" section, and edit your information as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--one line code for footer-->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    var collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+    
+    collapsibleHeaders.forEach(function(header) {
+        header.addEventListener('click', function() {
+            var content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
