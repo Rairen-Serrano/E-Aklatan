@@ -2162,9 +2162,101 @@ textarea {
   }
 
   @media only screen and (max-width: 768px) {
-    .background_container{
-      width: 1230px;
+    header{
+      width: 730px;
+      padding: 10px 20px;
+      height: 150px;
     }
+
+    .logo {
+      width: 110px;
+      height: 90px;
+    }
+
+    .slogan{
+      padding-top: 30px;
+      width: 470px;
+    }
+  
+    .slogan strong{
+      font-size: 4rem;
+    }
+  
+    .slogan p{
+      line-height: 20px;
+      font-size: .8rem;
+      padding-top: 10px;
+    }
+  
+    .slogan p span{
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+    }
+
+    /* Login & Signup */
+    .navbar-register{
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+    }
+
+    .navbar-register li{
+      border-radius: 20%;
+      font-size: .8rem;
+      width: 40px;
+    }
+
+    /* navbar links */
+    .navbar-links{
+      width: 750px;
+      padding: 0 10px;
+      font-size: 1rem;
+      height: 40px;
+    }
+
+    /* submenu */
+    #submenu{
+      left: 610px;
+      top: 212px;
+      padding: 5px;
+      width: 150px;
+      line-height: 30px;
+      height: 210px;
+    }
+  
+    #submenu li{
+      font-size: .7rem;
+    }
+
+    /*Carousel*/
+    .img-slider {
+      width: 100%;
+      margin-bottom: 200px;
+      height: 400px;
+    }
+
+    .img-slider .slide img{
+      height: 400px;
+    }
+
+    .img-slider .slide .info {
+      padding: 0px 30px;
+    }
+
+    .img-slider .slide .info p {
+      margin-top: 80px;
+      font-size: 1.2rem;
+    }
+
+    .img-slider .navigation {
+      bottom: 10px;
+    }
+
+    .img-slider .navigation .btn {
+      width: 8px;
+      height: 8px;
+    }
+
   }
 
   
@@ -2173,65 +2265,6 @@ textarea {
 
 
   @media only screen and (max-width: 425px){
-    header{
-      width: 385px;
-      padding: 0 20px;
-      height: 150px;
-    }
-
-    .logo {
-      width: 100px;
-      height: 80px;
-    }
-
-    .slogan{
-      visibility: hidden;
-      overflow: hidden;
-    }
-
-
-
-
-
-  /* Register */
-  .navbar-register li{
-    text-align: center;
-  }
-
-
-
-
-
-
-  /* Register */
-  .navbar-register{
-    padding-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .navbar-register li{
-    list-style: none;
-    background-color: #0097B2;
-    padding: 8px 13px;
-    border-radius: 20%;
-    transition: all .2s linear;
-    font-size: .7rem;
-  }
-
-  .navbar-register li a{
-    color: #FFFF;
-    font-family: Poppins, sans-serif;
-  }
-
-  .navbar-register li:hover{
-    background-color: #132540;
-  } 
-
-
-
 
 
 
