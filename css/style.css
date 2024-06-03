@@ -2934,15 +2934,24 @@ textarea {
       padding: 0 0 20px 0;
     }
 
+    .form-element{
+      flex-direction: column;
+    }
+
+    .form-element label{
+      height: auto;
+      flex: 0 0 10px;
+    }
+
     /* Styling for form elements */
     .form-element label {
       font-size: .9rem;
-      flex: 0 0 100px;
     }
 
     .form-element input[type="text"],
     .form-element input[type="file"],
     .form-element select {
+      width: 90%;
       font-size: .8rem;
     }
 
