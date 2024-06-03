@@ -139,7 +139,6 @@
     align-items: center;
     flex-direction: row;
     gap: 5px;
-
   }
 
   .navbar_profile a img{
@@ -167,6 +166,10 @@
   }
 
   /* Navbar Link */
+  .menu-icon {
+    display: none;
+  }
+
   .navbar-links {
     display: flex;
     justify-content: space-around;
@@ -1173,7 +1176,7 @@
 
   /* Newspaper Page */
 
-  /* Annual Reports Carousel */
+  /* Annual Reports */
   .annualReport_Title{
     margin-top: 6rem;
     display: flex;
@@ -1254,7 +1257,7 @@
     border: solid 0 transparent;
     background-color: rgba(245, 245, 245, 0.8);
     box-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    height: 280px;
+    height: auto;
     border-radius: 15px;
     padding: 20px 100px 20px 100px;
     text-align: justify;
@@ -1762,6 +1765,10 @@
   flex-direction: column;
 }
 
+.profile_info h2{
+  font-size: 1.2rem;
+}
+
 .upload{
   text-align: center;
 }
@@ -1825,7 +1832,7 @@
 
 .profile_sidebarmenu{
   display: flex;
-  justify-content: center;
+  justify-content: center;  
   align-items: center;
   text-align: center;
   padding: 10px 0;
@@ -1860,12 +1867,12 @@
   color: #132540;
 }
 
-.dashboard_title{
+.dashboard_title, .accountdetails-box h1{
   font-family: Poppins, sans-serif;
   font-weight: 600;
   font-size: 2rem;
   padding: 10px;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .dashboard_container, .usermanagement_container{
@@ -2168,6 +2175,7 @@ textarea {
   
 
   @media only screen and (max-width: 768px) {
+    /* NAVABAR */
     header{
       width: 730px;
       padding: 10px 20px;
@@ -2197,6 +2205,15 @@ textarea {
     .slogan p span{
       font-size: 1.6rem;
       letter-spacing: 2px;
+    }
+
+    .navbar_profile {
+      width: 50px;
+    }
+
+
+    .navbar_profile a p{
+      display: none;
     }
 
     /* Login & Signup */
@@ -2320,9 +2337,6 @@ textarea {
       grid-auto-columns: calc((100% / 3));
     }
 
-
-
-
     /* Landing Page - News and Updates */
     .NewAndUpdate_container {
       width: 100%;
@@ -2367,6 +2381,16 @@ textarea {
       right: 20px;
     }
 
+    /* NEWS AND UPDATE PAGE */
+    .article_Body, .article_container, .continueReading{
+      width: 100%;
+      height: auto;
+    }
+
+    .article_container{
+      padding-top: 150px;
+      box-sizing: border-box;
+    }
 
     /* footer */
     footer {
@@ -2390,10 +2414,6 @@ textarea {
       text-align: left;
     }
 
-
-
-
-
     /* ----- BOOKS PAGE ------ */
     .booksPage_container {
       width: 100%;
@@ -2415,13 +2435,6 @@ textarea {
     .search-container{
       padding: 0 50px 0 0;
     }
-
-
-
-
-
-
-
 
     /* side bar */
     .sidebar_container {
@@ -2448,13 +2461,10 @@ textarea {
       width: 60%;
     }
 
-
-
-
     /* books */
     .books_container {
       width: 100%;
-      height: 1600px;
+      height: auto;
       padding: 0;
     }
 
@@ -2477,14 +2487,137 @@ textarea {
       font-size: .9rem;
     }
 
+    /* BOOK INFO */
+    .bookFrontCover img{
+      width: 200px;
+      height: 300px;
+    }
 
-    
+    .popup.active{
+      top: 580px;
+    }
+
     /* Pagination */
     .pagination li a {
       font-size: .8em;
     }
 
+    /* Newspaper Page */
+    .newspapers_body, .AnnualReport-wrapper {
+      width: 100%;
+    }
 
+    /* Annual Reports Carousel */
+    .annualReport_Title{
+      font-size: .8rem;
+    }
+
+    .AnnualReport-box a{
+      font-size: .6rem;
+    }
+
+    .AnnualReport-box h3{
+      width: 500px;
+      font-size: .9rem;
+    }
+
+    /* ABOUT US */
+    .background_container, .background_container .container_wrapper{
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+    }
+
+    .AboutUs_info-1, .contactUs-info1{
+      font-size: .9rem;
+    }
+
+    .aboutUs_intro_wrapper{
+      height: auto;
+      box-sizing: border-box;
+      padding-bottom: 2rem;
+      font-size: .95rem;
+    }
+
+    /* CONTACT US */
+    .googlemap-location iframe{
+      width: 90%;
+    }
+
+    /* LOGIN & SIGNUP*/
+    .w3l-mockup-form {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .w3l_form {
+      display: none;
+    }
+
+    .content-wthree {
+      flex-basis: 80%;
+      -webkit-flex-basis: 58%;
+      border-radius: 8px;
+    }
+
+    /* Profile Page */
+    .profile_container{
+      margin: 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .profile_sidebar{
+      padding-top: 50px;
+      box-sizing: border-box;
+    }
+
+    .profile_mainbar{
+      box-sizing: border-box;
+      padding-top: 100px;
+    }
+
+    .upload img{
+      height: 150px;
+      width: 150px;
+    }
+
+    .upload .rightRound{
+      top: 69%;
+      left: 20%;
+    }
+
+    .upload .leftRound{
+      top: 69%;
+      left: 7%;
+    }
+
+    .profile_sidebarmenu li{
+      width: 200px;
+      font-size: 1rem;
+    }
+
+    /* Profile Dashboard*/
+    .dashboardtitle_container h4{
+      font-size: .8rem;
+    }
+
+    .dashboard_title, .accountdetails-box h1{
+      font-size: 1.5rem;
+    }
+
+    .dashboard_table{
+      font-size: .8em;
+    }
+
+    /* Account Details - Profile */
+    .form_accountdetails {
+      font-size: .8rem;
+    }
+
+    .form_accountdetails input {
+      font-size: .8rem;
+    }
   }
 
   
@@ -2493,57 +2626,663 @@ textarea {
 
 
 
-
-
-
-
-
-
   @media only screen and (max-width: 425px){
-
-
-
-  /* navbar links */
-  .navbar-links{
-    width: 405px;
-    padding: 0 10px;
-    font-size: .7rem;
-    height: 40px;
-  }
-
-
-
-
-
-  #submenu{
-    left: 260px;
-    top: 195px;
-    padding: 5px;
-    width: 150px;
-    line-height: 30px;
-    height: 210px;
-  }
-
-  #submenu li{
-    font-size: .7rem;
-  }
-
-
-
-
-
-
-    footer, .img-slider, .about_container, .NewAndUpdate_container, .topBooks_Title, 
-    .NewAndUpdateTitle, .topbooks_container, .video_container, .booksPage_container, .newspapers_body,
-    .background_container, .container{
-      width: 1250px;
-    }
-
-    .background_container{
-      width: 1245px;
-    }
-
-    .horizontal-line{
+    /* NAVABAR */
+    header{
+      box-sizing: border-box;
       width: 100%;
+    }
+
+    .logo {
+      height: 80px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .slogan{
+      display: none;
+    }
+
+    .navbar_profile {
+      box-sizing: border-box;
+      padding: 15px 0 0 0;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      line-height: 1px;
+    }
+
+    .navbar_profile a img {
+      width: 20px;
+      height: 20px;
+    } 
+
+    .navbar_profile a p{
+      font-size: .8rem;
+      display: block;
+    }
+
+    /* Login & Signup */
+    .navbar-register{
+      padding: 0;
+    }
+
+    .navbar-register li{
+      font-size: .7rem;
+      width: 35px;
+    }
+    
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+      font-size: 25px;
+      color: white;
+      padding: 5px;
+      background-color: #0097B2;
+    }
+
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      padding: 0;
+    }
+
+    .navbar-links li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .navbar-links li a {
+      font-size: .8rem;
+      padding: 7px;
+      display: block;
+      font-family: Poppins-Semibold;
+    }
+
+    .navbar-links.show {
+      display: flex;
+    }
+
+    #submenu {
+      display: block;
+      box-sizing: border-box;
+      position: static;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      background-color: #132540;
+    }
+
+    #submenu li{
+      font-size: .7rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    #submenu li a {
+      padding: 0;
+      margin: 0;
+    }
+
+    /*Carousel*/
+    .img-slider {
+      height: 350px;
+    }
+
+    .img-slider .slide img{
+      height: 350px;
+    }
+
+    .img-slider .slide .info p {
+      margin-top: 70px;
+      font-size: 1.1rem;
+    }
+
+    /* Video */
+    .video_wrapper iframe{
+      width: 400px;
+      height: 300px;
+    }
+
+    /* About E-Aklatan */
+    .brief_aboutUs{
+      padding: 30px 20px 40px 20px;
+    }
+
+    .brief_aboutUs h2 {
+      font-size: 1.7rem;
+    }
+
+    .brief_aboutUs button {
+      font-size: .8rem;
+    }
+
+    /* Top Books */
+    .topbooks_wrapper .topbooks_carousel{
+      padding: 10px 70px;
+      grid-auto-columns: calc((100% / 1.3));
+    }
+
+    /* Landing Page - News and Updates */
+    .NewsAndUpdate_wrapper .NewsAndUpdate_carousel {
+      padding: 0 70px;
+      grid-auto-columns: calc((100% / 1) - 12px);
+    }
+
+
+    .NewsAndUpdate_wrapper .arrowButton:first-child {
+      left: 10px;
+    }
+
+    .NewsAndUpdate_wrapper .arrowButton:last-child {
+      right: 10px;
+    }
+
+    /* NEWS AND UPDATE PAGE */
+    .article_container{
+      width: 100%;
+      height: auto;
+      padding-top: 150px;
+      box-sizing: border-box;
+      padding: 150px 20px 0 20px;
+    }
+
+    .article_title .articleTitle{
+      font-size: 2rem;
+      height: auto;
+    }
+
+    .image_wrapper img{
+      margin-top: 100px;
+      width: 400px;
+      height: 290px;
+    }
+
+    /* footer */
+    .footer-links{
+      padding: 0;
+    }
+
+    .footer-links li{
+      font-size: .57rem;
+    }
+
+    .footer-links li span {
+      padding: 0px 5px;
+    }
+
+    .footer-boxes {
+      padding: 0px 10px 0px 10px;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .vl {
+      display: none;
+    }
+
+    .site-info {
+      width: 80%;
+      text-align: center;
+    }
+
+    /* ----- BOOKS PAGE ------ */
+    .booksPage_container {
+      box-sizing: border-box;
+    }
+
+    /* Books Header*/
+    .books_header h2 {
+      padding-left: 30px;
+      font-size: 1.5rem;
+    }
+
+    /* Search Bar */
+    .search-container{
+      padding: 0 20px 0 0;
+    }
+
+    /* side bar */
+    .sidebar_container {
+      box-sizing: border-box;
+      height: auto; 
+    }
+
+    .sidebar_categories_wrapper {
+      width: 50%;
+    }
+
+    .trendBook_wrapper {
+      width: 60%;
+    }
+
+    .sidebar_categories_wrapper h3 {
+      font-size: 1rem;
+    }
+
+    .sidebar_categories ul li a {
+      font-size: .9rem;
+    }
+
+    .book_box img{
+      width: 100px;
+      height: 150px;
+    }
+
+    .sidebar_book_info h3, .sidebar_book_info h5{
+      font-size: .8rem;
+    }
+
+    /* BOOKS INFO */
+    .books_container {
+      height: auto;
+    }
+
+    .book {
+      width: 100px;
+      height: 280px;
+    }
+
+    .book_img img{
+      width: 95px;
+      height: 150px;
+    }
+
+    .book_info h2{
+      font-size: .7rem;
+    }
+
+    .book_info h3{
+      font-size: .8rem;
+    }
+
+    /* BOOK INFO */
+    .bookinfo_container{
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .bookFrontCover{
+      margin: 0;
+    }
+
+    .bookFrontCover img{
+      width: 180px;
+      height: 250px;
+    }
+
+    .popup.active{
+      top: 580px;
+    }
+
+    /* Borrow Book Popup */
+    .popup {
+      width: 80%;
+      box-sizing: border-box;
+      padding: 20px 10px;
+      border: 1px solid red;
+    }
+
+    .popup h2 {
+      text-align: center;
+      color: #FFF;
+      padding: 0 0 20px 0;
+    }
+
+    /* Styling for form elements */
+    .form-element label {
+      font-size: .9rem;
+      flex: 0 0 100px;
+    }
+
+    .form-element input[type="text"],
+    .form-element input[type="file"],
+    .form-element select {
+      font-size: .8rem;
+    }
+
+    /* Styling for submit button */
+    .button-container {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .borrow-submit {
+      width: 80%;
+      border-radius: 10px;
+      font-size: .9rem;
+    }
+
+    /* Pagination */
+    .pagination li a {
+      font-size: .8em;
+    }
+
+    /* Newspaper Page */
+    .newspapers_body, .AnnualReport-wrapper {
+      width: 100%;
+    }
+
+    /* Annual Reports Carousel */
+    .annualReport_Title{
+      font-size: .7rem;
+    }
+
+    .AnnualReport-box a{
+      font-size: .55rem;
+    }
+
+    .AnnualReport-box h3{
+      width: 250px;
+      font-size: .9rem;
+    }
+
+    /* ABOUT US */
+    .AboutUs_info-1, .contactUs-info1{
+      font-size: .85rem;
+    }
+
+    .aboutUs_intro_wrapper{
+      padding: 10px 30px 2rem 30px;
+      font-size: .9rem;
+    }
+
+    /* BRIEF HISTORY */
+    .briefHistory_info-2{
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    /* CONTACT US */
+    .contactUs-infowrapper{
+      flex-direction: column;
+    }
+
+    .googlemap-location iframe{
+      width: 90%;
+    }
+
+    /* Mission Vision */
+    .makaticity_wrapper{
+      padding: 30px;
+    }
+
+    /* LOGIN & SIGNUP*/
+    .w3l-mockup-form {
+      padding: 0;
+    }
+
+    .content-wthree {
+      flex-basis: 80%;
+      -webkit-flex-basis: 35.3%;
+    }
+
+    /* Profile Page */
+    .profile_mainbar{
+      width: 100%;
+    }
+
+    .profile_container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .profile_sidebar{
+      height: auto;
+      width: 60%;
+    }
+
+    .profile_mainbar{
+      padding-top: 0;
+    }
+
+    .upload .rightRound{
+      top: 69%;
+      left: 55%;
+    }
+
+    .upload .leftRound{
+      top: 69.5%;
+      left: 32%;
+    }
+
+    /* Profile Dashboard*/
+    .dashboardtitle_container h4{
+      font-size: .8rem;
+    }
+
+    .dashboard_title, .accountdetails-box h1{
+      font-size: 1.5rem;
+    }
+
+    .dashboard_table{
+      font-size: .8em;
+      width: 90%;
+      box-sizing: border-box;
+    }
+    
+    .dashboard_table th, 
+    .dashboard_table td{
+      padding: 5px 7px;
+    }
+
+    /* Account Details - Profile */
+    .accountdetails-box{
+      width: 100%px;
+    }
+
+    .form_accountdetails {
+      font-size: .8rem;
+    }
+
+    .form_accountdetails input {
+      font-size: .8rem;
+    }
+  }
+
+
+
+
+
+
+
+  @media only screen and (max-width: 375px){ 
+    /*Carousel*/
+    .img-slider {
+      height: 300px;
+    }
+
+    .img-slider .slide img{
+      height: 300px;
+    }
+
+    .img-slider .slide .info p {
+      margin-top: 50px;
+      font-size: 1rem;
+    }
+
+    /* Video */
+    .video_wrapper iframe{
+      width: 350px;
+      height: 300px;
+    }
+
+    /* Top Books */
+    .topbooks_wrapper .topbooks_carousel{
+      grid-auto-columns: calc((100% / 1.1));
+    }
+
+    /* Landing Page - News and Updates */
+    .NewsAndUpdate_wrapper .NewsAndUpdate_carousel {
+      grid-auto-columns: calc(100% / .9);
+    }
+
+    /* NEWS AND UPDATE PAGE */
+    .image_wrapper img{
+      width: 350px;
+      height: 270px;
+    }
+
+    /* footer */
+    .footer-links{
+      display: none;
+    }
+    
+    .footer-content{
+      display: none;
+    }
+
+    /* ----- BOOKS PAGE ------ */
+    /* BOOKS */
+    .books_container {
+      height: auto;
+    }
+
+    .book {
+      width: 88px;
+    }
+
+    .book_img img{
+      width: 89px;
+    }
+
+    .book_info h3{
+      font-size: .75rem;
+    }
+
+    /* Newspaper Page */
+    .AnnualReport-box h3{
+      width: 210px;
+    }
+
+    /* CONTACT US */
+    .contactUs-infowrapper{
+      flex-direction: column;
+    }
+
+    .googlemap-location iframe{
+      width: 90%;
+    }
+
+    /* Mission Vision */
+    .makaticity_wrapper{
+      padding: 20px;
+    }
+
+    /* LOGIN & SIGNUP*/
+    .content-wthree {
+      flex-basis: 80%;
+      -webkit-flex-basis: 31.2%;
+    }
+
+    /* Profile Page */
+    /* Profile Dashboard*/
+    .dashboardtitle_container h4{
+      font-size: .9rem;
+    }
+
+    .dashboard_title, .accountdetails-box h1{
+      font-size: 1.2rem;
+    }
+    
+    .dashboard_table th, 
+    .dashboard_table td{
+      padding: 0px;
+    }
+  }
+
+
+  @media only screen and (max-width: 320px){ 
+    /*Carousel*/
+    .img-slider {
+      height: 280px;
+    }
+
+    .img-slider .slide img{
+      height: 280px;
+    }
+
+    .img-slider .slide .info p {
+      margin-top: 30px;
+      font-size: .9rem;
+    }
+
+    /* Video */
+    .video_wrapper iframe{
+      width: 300px;
+    }
+
+    /* Top Books */
+    .topbooks_wrapper .topbooks_carousel{
+      grid-auto-columns: calc((100% / .9));
+    }
+
+    /* Landing Page - News and Updates */
+    .NewsAndUpdate_wrapper .NewsAndUpdate_carousel {
+      grid-auto-columns: calc(100% / .6);
+    }
+
+    /* NEWS AND UPDATE PAGE */
+    .article_title{
+      height: auto;
+    }
+
+    .article_title h4 span{
+      font-size: .8rem;
+    }
+
+    .image_wrapper img{
+      width: 310px;
+      height: 230px;
+    }
+
+    /* ----- BOOKS PAGE ------ */
+    /* BOOKS */
+    .books_container {
+      height: auto;
+    }
+
+    .book {
+      width: 76px;
+    }
+
+    .book_img img{
+      width: 75px;
+      height: 120px;
+    }
+
+    /* BOOK PAGE - HEADER */
+    .books_header h2{
+      padding-left: 10px;
+    }
+
+    .search-container{
+      padding: 0;
+    }
+
+    /* PAGINATION */
+    .pagination{
+      margin: 30px 10px;
+    }
+
+    /* Newspaper Page */
+    .AnnualReport-box h3{
+      width: 190px;
+    }
+
+    /* LOGIN & SIGNUP*/
+    .content-wthree {
+      padding: 50px 10px;
+      flex-basis: 80%;
+      -webkit-flex-basis: 26.7%;
     }
   }

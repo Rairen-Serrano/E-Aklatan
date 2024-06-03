@@ -579,6 +579,7 @@ switch(page){
       }
     }
 
+    /* PASSWORD COMPLEXITY */
     function validate(){
       var pass = document.getElementById("register_password1");
       var upper = document.getElementById('upper');
@@ -622,6 +623,4 @@ switch(page){
         len.style.color = '#FF5050';
       }
     }
-
-
 }

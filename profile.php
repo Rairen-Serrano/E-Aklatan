@@ -42,33 +42,33 @@
     <div class="profile_container">
         <div class="profile_sidebar">
             <div class="profile_info">
-            <form action="" class="" enctype="multipart/form-data" method="post">
-                <input type="hidden" name="id" value="<?php echo $users_row['UserID'] ?>">
-                <div class="upload">
-                    <?php 
-                        $profilePicture = $users_row['profile_picture'];
-                        if (empty($profilePicture)) {
-                            $profilePicture = 'profile-picture.jpg';
-                        }
-                    ?>
-                    <img src="images/<?php echo $profilePicture ?>" id="profile_picture">
+                <form action="" class="" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="id" value="<?php echo $users_row['UserID'] ?>">
+                    <div class="upload">
+                        <?php 
+                            $profilePicture = $users_row['profile_picture'];
+                            if (empty($profilePicture)) {
+                                $profilePicture = 'profile-picture.jpg';
+                            }
+                        ?>
+                        <img src="images/<?php echo $profilePicture ?>" id="profile_picture">
 
-                    <div class="rightRound" id="upload">
-                        <input type="file" name="fileImg" id="fileImg" accept=".jpg, .jpeg, .png, .webp">
-                        <i class="fa fa-camera"></i>
+                        <div class="rightRound" id="upload">
+                            <input type="file" name="fileImg" id="fileImg" accept=".jpg, .jpeg, .png, .webp">
+                            <i class="fa fa-camera"></i>
+                        </div>
+
+                        <div class="leftRound" id="cancel" style="display: none;">
+                            <i class="fa fa-times"></i>
+                        </div>
+
+                        <div class="rightRound" id="confirm" style="display: none;">
+                            <input type="submit" name="" value="">
+                            <i class="fa fa-check"></i>
+                        </div>
+
                     </div>
-
-                    <div class="leftRound" id="cancel" style="display: none;">
-                        <i class="fa fa-times"></i>
-                    </div>
-
-                    <div class="rightRound" id="confirm" style="display: none;">
-                        <input type="submit" name="" value="">
-                        <i class="fa fa-check"></i>
-                    </div>
-
-                </div>
-            </form>
+                </form>
 
 
                 <?php 

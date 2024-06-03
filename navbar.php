@@ -41,22 +41,34 @@
 
     <!--<nav class="navbar-container">-->
     <nav>
-        <ul class="navbar-links">
-            <li><a style="text-decoration: none" href="index.php">HOME</a></li>
-            <li><a style="text-decoration: none" href="books.php">BOOKS</a></li>
-            <li><a style="text-decoration: none" href="ebooks.php">EBOOKS</a></li>
-            <li><a style="text-decoration: none" href="journal.php">JOURNALS</a></li>
-            <li><a style="text-decoration: none" href="newspaper.html">NEWSPAPER</a></li>
-            <li><a style="text-decoration: none" href="#">ABOUT US</a>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="books.php">BOOKS</a></li>
+            <li><a href="ebooks.php">EBOOKS</a></li>
+            <li><a href="journal.php">JOURNALS</a></li>
+            <li><a href="newspaper.html">NEWSPAPER</a></li>
+            <li><a href="#">ABOUT US</a>
                 <ul id="submenu">
                     <li><a href="aboutUs.html">About City Library</a></li>
                     <li><a href="briefHistory.html">Brief History</a></li>
                     <li><a href="mission&vision.html">Mission & Vision</a></li>
                     <li><a href="contactUs.html">Contact Us</a></li>
                     <li><a target="_blank" href="https://drive.google.com/file/d/1irBJCSH4AvPyVgZTg33aP2SzwxzOKgKW/view?usp=drive_link">Citizen's Charter</a></li>
-                    <li><a target="_blank" style="text-decoration: none" href="https://www.facebook.com/messages/t/334842009708304">Chat Support</a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/messages/t/334842009708304">Chat Support</a></li>
                     <li><a href="troubleshoot.html">Troubleshooting</a></li>
                 </ul>    
             </li>
         </ul> 
     </nav>
+
+    <script>
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            var navbarLinks = document.getElementById('navbar-links');
+            if (navbarLinks.classList.contains('show')) {
+                navbarLinks.classList.remove('show');
+            } else {
+                navbarLinks.classList.add('show');
+            }
+        });
+    </script>

@@ -116,10 +116,9 @@ if (isset($_POST['submit'])) {
     
 
 
-  <!-- form section start -->
+
   <section class="w3l-mockup-form">
       <div class="container">
-          <!-- /form -->
           <div class="workinghny-form-grid">
               <div class="main-mockup">
                   <div class="w3l_form align-self">
@@ -147,10 +146,8 @@ if (isset($_POST['submit'])) {
                   </div>
               </div>
           </div>
-          <!-- //form -->
       </div>
   </section>
-  <!-- //form section start -->
 
 
 
