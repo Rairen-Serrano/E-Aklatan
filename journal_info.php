@@ -23,8 +23,8 @@
 
      <div class="bookpage_container">
         <div class="GoBack">
-            <a href="ebooks.php"><img src="images/angle-left-solid.svg" alt="LeftButton"></a>
-            <a href="ebooks.php"><h4>&nbsp;&nbsp;&nbsp;GO BACK</h4></a>
+            <a href="journal.php"><img src="images/angle-left-solid.svg" alt="LeftButton"></a>
+            <a href="journal.php"><h4>&nbsp;&nbsp;&nbsp;GO BACK</h4></a>
         </div>
 
 
